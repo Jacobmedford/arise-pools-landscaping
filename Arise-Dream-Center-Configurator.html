@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Center — Arise Pools & Landscaping</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════
+   ARISE POOLS — DESIGN DNA TOKEN SYSTEM
+   ═══════════════════════════════════════════════════════ */
+:root {
+  --cream: #F7F1E8;
+  --stone: #1A1814;
+  --gold: #C9A464;
+  --gold-light: #E5CB9A;
+  --gold-dark: #8B6914;
+  --pool-blue: #1C738A;
+  --pool-deep: #0C2736;
+  --slate: #2E2A25;
+  --mist: #8A8480;
+  --radius: 0.25rem;
+  --error: #C44;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  color: var(--stone);
+  background: var(--cream);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════════════════════════════════════════════════════
+   DREAM CENTER LAYOUT
+   ═══════════════════════════════════════════════════════ */
+
+.dream-center {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Header ─── */
+.dc-header {
+  text-align: center;
+  padding: 60px 24px 40px;
+  background: var(--stone);
+  color: #fff;
+}
+.dc-header .eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.dc-header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: rgba(255,255,255,0.95);
+  margin-bottom: 12px;
+}
+.dc-header h1 em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+.dc-header .subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* ─── Progress Bar ─── */
+.dc-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 32px 24px 16px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.dc-progress .step-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--mist);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: var(--mist);
+  background: var(--cream);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.dc-progress .step-dot.active {
+  border-color: var(--gold);
+  color: var(--stone);
+  background: var(--gold);
+}
+.dc-progress .step-dot.completed {
+  border-color: var(--gold);
+  color: #fff;
+  background: var(--gold-dark);
+}
+.dc-progress .step-line {
+  flex: 1;
+  height: 2px;
+  background: var(--mist);
+  opacity: 0.3;
+  max-width: 60px;
+  transition: background 0.3s ease;
+}
+.dc-progress .step-line.active {
+  background: var(--gold);
+  opacity: 1;
+}
+
+/* ─── Step Container ─── */
+.dc-body {
+  flex: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 24px 120px;
+  width: 100%;
+}
+
+.step-panel {
+  display: none;
+  animation: fadeUp 0.4s ease forwards;
+}
+.step-panel.active {
+  display: block;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.step-question {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--stone);
+  margin-bottom: 8px;
+  text-align: center;
+}
+.step-prompt {
+  font-size: 0.95rem;
+  color: var(--mist);
+  text-align: center;
+  margin-bottom: 36px;
+  font-style: italic;
+}
+
+/* ─── Service Type Cards (Step 1) ─── */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.service-card {
+  position: relative;
+  background: #fff;
+  border: 2px solid transparent;
+  padding: 28px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.service-card:hover {
+  border-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26,24,20,0.08);
+}
+.service-card.selected {
+  border-color: var(--gold);
+  background: rgba(201,164,100,0.06);
+}
+.service-card .service-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+.service-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: var(--stone);
+  margin-bottom: 6px;
+}
+.service-card p {
+  font-size: 0.85rem;
+  color: var(--mist);
+  line-height: 1.4;
+}
+.service-card .check-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #fff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.service-card.selected .check-badge {
+  display: flex;
+}
+
+/* ─── Style Cards (Step 2) ─── */
+.style-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+.style-card {
+  background: var(--stone);
+  color: #fff;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+.style-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+.style-card.selected {
+  border-color: var(--gold);
+}
+.style-card .style-img {
+  width: 100%;
+  height: 140px;
+  background: var(--slate);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+.style-card .style-label {
+  padding: 14px 16px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  text-align: center;
+}
+.style-card.selected .style-label {
+  color: var(--gold-light);
+}
+
+/* ─── Feature Chips (Step 3 & 4) ─── */
+.chip-group {
+  margin-bottom: 24px;
+}
+.chip-group-label {
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 10px;
+}
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.chip {
+  padding: 10px 18px;
+  border: 1.5px solid rgba(26,24,20,0.15);
+  background: #fff;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 0.88rem;
+  color: var(--stone);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.chip:hover {
+  border-color: var(--gold);
+  background: rgba(201,164,100,0.04);
+}
+.chip.selected {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--stone);
+  font-weight: 500;
+}
+
+/* ─── Lot Size Selector (Step 5) ─── */
+.lot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.lot-card {
+  background: #fff;
+  border: 2px solid transparent;
+  padding: 24px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.lot-card:hover { border-color: var(--gold-light); }
+.lot-card.selected { border-color: var(--gold); background: rgba(201,164,100,0.06); }
+.lot-card .lot-icon { font-size: 1.8rem; margin-bottom: 8px; }
+.lot-card h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+.lot-card p { font-size: 0.8rem; color: var(--mist); }
+
+.textarea-field,
+.input-field {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid rgba(26,24,20,0.15);
+  background: #fff;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 0.95rem;
+  color: var(--stone);
+  outline: none;
+  transition: border-color 0.2s ease;
+  margin-bottom: 16px;
+}
+.textarea-field:focus,
+.input-field:focus {
+  border-color: var(--gold);
+}
+.textarea-field {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.field-label {
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(26,24,20,0.7);
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* ─── Budget & Timeline Cards (Step 6) ─── */
+.budget-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+.budget-card {
+  background: #fff;
+  border: 2px solid transparent;
+  padding: 20px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.budget-card:hover { border-color: var(--gold-light); }
+.budget-card.selected { border-color: var(--gold); background: rgba(201,164,100,0.06); }
+.budget-card h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: 2px;
+}
+.budget-card p { font-size: 0.8rem; color: var(--mist); }
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+/* ─── Contact Form (Step 7) ─── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.contact-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+.contact-method-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+.contact-method {
+  padding: 10px 20px;
+  border: 1.5px solid rgba(26,24,20,0.15);
+  background: #fff;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.contact-method:hover { border-color: var(--gold); }
+.contact-method.selected {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--stone);
+  font-weight: 500;
+}
+
+/* ─── Summary Panel ─── */
+.summary-section {
+  background: #fff;
+  padding: 32px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(26,24,20,0.08);
+}
+.summary-section h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  color: var(--stone);
+}
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(26,24,20,0.06);
+  font-size: 0.92rem;
+}
+.summary-row:last-child { border-bottom: none; }
+.summary-label { color: var(--mist); }
+.summary-value { font-weight: 400; color: var(--stone); }
+
+.estimate-banner {
+  background: var(--stone);
+  color: #fff;
+  padding: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.estimate-banner .estimate-label {
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.estimate-banner .estimate-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 2.4rem;
+  color: var(--gold-light);
+}
+.estimate-banner .estimate-note {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 8px;
+}
+
+/* ─── Navigation Buttons ─── */
+.dc-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  margin-top: 16px;
+}
+.btn-back {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--mist);
+  background: none;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  transition: color 0.2s ease;
+}
+.btn-back:hover { color: var(--stone); }
+
+.btn-next,
+.btn-submit {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.btn-next {
+  background: var(--gold);
+  color: var(--stone);
+}
+.btn-next:hover {
+  background: var(--gold-dark);
+  color: #fff;
+}
+.btn-submit {
+  background: var(--pool-deep);
+  color: #fff;
+  padding: 18px 48px;
+  font-size: 0.8rem;
+}
+.btn-submit:hover {
+  background: var(--pool-blue);
+}
+
+.btn-next:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ─── Success State ─── */
+.success-panel {
+  text-align: center;
+  padding: 60px 24px;
+}
+.success-panel .success-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.success-panel h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+.success-panel p {
+  color: var(--mist);
+  max-width: 480px;
+  margin: 0 auto 32px;
+}
+.btn-book {
+  display: inline-block;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  background: var(--gold);
+  color: var(--stone);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.btn-book:hover {
+  background: var(--gold-dark);
+  color: #fff;
+}
+
+/* ─── Validation ─── */
+.field-error {
+  border-color: var(--error) !important;
+}
+.error-msg {
+  color: var(--error);
+  font-size: 0.78rem;
+  margin-top: -12px;
+  margin-bottom: 12px;
+  display: none;
+}
+.error-msg.show { display: block; }
+
+/* ─── Responsive ─── */
+@media (max-width: 640px) {
+  .dc-header { padding: 40px 20px 28px; }
+  .service-grid { grid-template-columns: 1fr; }
+  .style-grid { grid-template-columns: repeat(2, 1fr); }
+  .budget-grid { grid-template-columns: 1fr; }
+  .timeline-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .lot-grid { grid-template-columns: 1fr; }
+  .dc-progress { gap: 0; padding: 24px 16px 12px; }
+  .dc-progress .step-dot { width: 28px; height: 28px; font-size: 0.65rem; }
+  .dc-progress .step-line { max-width: 32px; }
+  .dc-body { padding: 16px 16px 100px; }
+  .contact-method-row { flex-direction: column; }
+  .summary-section { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="dream-center">
+
+  <!-- ═══ HEADER ═══ -->
+  <div class="dc-header">
+    <div class="eyebrow">The Arise Dream Center</div>
+    <h1>Design Your <em>Dream Backyard</em></h1>
+    <p class="subtitle">Walk through a few quick steps and we'll match you with a designer — not a salesperson — within one business day.</p>
+  </div>
+
+  <!-- ═══ PROGRESS BAR ═══ -->
+  <div class="dc-progress" id="progressBar">
+    <div class="step-dot active" data-step="1" onclick="goToStep(1)">1</div>
+    <div class="step-line" data-line="1"></div>
+    <div class="step-dot" data-step="2" onclick="goToStep(2)">2</div>
+    <div class="step-line" data-line="2"></div>
+    <div class="step-dot" data-step="3" onclick="goToStep(3)">3</div>
+    <div class="step-line" data-line="3"></div>
+    <div class="step-dot" data-step="4" onclick="goToStep(4)">4</div>
+    <div class="step-line" data-line="4"></div>
+    <div class="step-dot" data-step="5" onclick="goToStep(5)">5</div>
+    <div class="step-line" data-line="5"></div>
+    <div class="step-dot" data-step="6" onclick="goToStep(6)">6</div>
+    <div class="step-line" data-line="6"></div>
+    <div class="step-dot" data-step="7" onclick="goToStep(7)">7</div>
+  </div>
+
+  <!-- ═══ STEP PANELS ═══ -->
+  <div class="dc-body">
+
+    <!-- ─── STEP 1: Service Type ─── -->
+    <div class="step-panel active" id="step1">
+      <h2 class="step-question">What Are You Dreaming Of?</h2>
+      <p class="step-prompt">Every Arise project starts with a vision. Where does yours begin?</p>
+
+      <div class="service-grid">
+        <div class="service-card" data-service="custom-pool" onclick="selectService(this)">
+          <div class="check-badge">✓</div>
+          <div class="service-icon">🏊</div>
+          <h3>Custom Pool</h3>
+          <p>A one-of-a-kind pool designed around your lifestyle and lot</p>
+        </div>
+        <div class="service-card" data-service="landscape" onclick="selectService(this)">
+          <div class="check-badge">✓</div>
+          <div class="service-icon">🌿</div>
+          <h3>Landscape Design</h3>
+          <p>Desert-modern or tropical oasis — designed to thrive in Arizona</p>
+        </div>
+        <div class="service-card" data-service="pool-remodel" onclick="selectService(this)">
+          <div class="check-badge">✓</div>
+          <div class="service-icon">🔄</div>
+          <h3>Pool Remodel</h3>
+          <p>Resurface, retile, and reimagine your existing pool</p>
+        </div>
+        <div class="service-card" data-service="full-backyard" onclick="selectService(this)">
+          <div class="check-badge">✓</div>
+          <div class="service-icon">✨</div>
+          <h3>Full Backyard</h3>
+          <p>Pool, landscape, hardscape, and outdoor living — the complete transformation</p>
+        </div>
+        <div class="service-card" data-service="hardscape" onclick="selectService(this)">
+          <div class="check-badge">✓</div>
+          <div class="service-icon">🧱</div>
+          <h3>Hardscape</h3>
+          <p>Pavers, flagstone, retaining walls, and decorative concrete</p>
+        </div>
+        <div class="service-card" data-service="maintenance" onclick="selectService(this)">
+          <div class="check-badge">✓</div>
+          <div class="service-icon">🛠</div>
+          <h3>Full Backyard Maintenance</h3>
+          <p>Weekly pool care, landscape upkeep, and seasonal service</p>
+        </div>
+      </div>
+
+      <div class="dc-nav">
+        <div></div>
+        <button class="btn-next" id="btn1" disabled onclick="nextStep()">Continue</button>
+      </div>
+    </div>
+
+    <!-- ─── STEP 2: Style (adapts to service type) ─── -->
+    <div class="step-panel" id="step2">
+      <h2 class="step-question">Choose Your Style</h2>
+      <p class="step-prompt" id="step2Prompt">Each pool we build is a one-of-a-kind commission. Pick the direction that moves you.</p>
+
+      <div class="style-grid" id="styleGrid">
+        <!-- Populated dynamically based on service type -->
+      </div>
+
+      <div class="dc-nav">
+        <button class="btn-back" onclick="prevStep()">← Back</button>
+        <button class="btn-next" id="btn2" disabled onclick="nextStep()">Continue</button>
+      </div>
+    </div>
+
+    <!-- ─── STEP 3: Features (adapts to service type) ─── -->
+    <div class="step-panel" id="step3">
+      <h2 class="step-question">Select Your Features</h2>
+      <p class="step-prompt">Build your wish list. Anything you want, we can likely build.</p>
+
+      <div id="featureChips">
+        <!-- Populated dynamically based on service type -->
+      </div>
+
+      <div class="dc-nav">
+        <button class="btn-back" onclick="prevStep()">← Back</button>
+        <button class="btn-next" onclick="nextStep()">Continue</button>
+      </div>
+    </div>
+
+    <!-- ─── STEP 4: Landscape Add-Ons ─── -->
+    <div class="step-panel" id="step4">
+      <h2 class="step-question">Landscape & Outdoor Living</h2>
+      <p class="step-prompt">The pool is the star. The landscape is the stage.</p>
+
+      <div id="addonChips">
+        <div class="chip-group">
+          <div class="chip-group-label">Landscape</div>
+          <div class="chip-row">
+            <div class="chip" onclick="toggleChip(this, 'addons')">Artificial Turf</div>
+            <div class="chip" onclick="toggleChip(this, 'addons')">Real Grass</div>
+            <div class="chip" onclick="toggleChip(this, 'addons')">Desert Plants</div>
+            <div class="chip" onclick="toggleChip(this, 'addons')">Privacy Wall</div>
+            <div class="chip" onclick="toggleChip(this, 'addons')">Lighting Package</div>
+          </div>
+        </div>
+        <div class="chip-group">
+          <div class="chip-group-label">Outdoor Living</div>
+          <div class="chip-row">
+            <div class="chip" onclick="toggleChip(this, 'addons')">Pergola</div>
+            <div class="chip" onclick="toggleChip(this, 'addons')">Ramada</div>
+            <div class="chip" onclick="toggleChip(this, 'addons')">Outdoor Kitchen</div>
+            <div class="chip" onclick="toggleChip(this, 'addons')">Built-in BBQ</div>
+            <div class="chip" onclick="toggleChip(this, 'addons')">Bar</div>
+            <div class="chip" onclick="toggleChip(this, 'addons')">TV Wall</div>
+            <div class="chip" onclick="toggleChip(this, 'addons')">Sound System</div>
+          </div>
+        </div>
+        <div class="chip-group">
+          <div class="chip-group-label">Hardscape</div>
+          <div class="chip-row">
+            <div class="chip" onclick="toggleChip(this, 'addons')">Pavers</div>
+            <div class="chip" onclick="toggleChip(this, 'addons')">Flagstone</div>
+            <div class="chip" onclick="toggleChip(this, 'addons')">Decorative Concrete</div>
+            <div class="chip" onclick="toggleChip(this, 'addons')">Retaining Walls</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dc-nav">
+        <button class="btn-back" onclick="prevStep()">← Back</button>
+        <button class="btn-next" onclick="nextStep()">Continue</button>
+      </div>
+    </div>
+
+    <!-- ─── STEP 5: Your Space ─── -->
+    <div class="step-panel" id="step5">
+      <h2 class="step-question">Tell Us About Your Space</h2>
+      <p class="step-prompt">Help us understand the stage we're working with.</p>
+
+      <label class="field-label">Lot Size</label>
+      <div class="lot-grid">
+        <div class="lot-card" data-lot="small" onclick="selectLot(this)">
+          <div class="lot-icon">◽</div>
+          <h4>Small</h4>
+          <p>Under 6,000 sq ft</p>
+        </div>
+        <div class="lot-card" data-lot="medium" onclick="selectLot(this)">
+          <div class="lot-icon">◻️</div>
+          <h4>Medium</h4>
+          <p>6,000 – 10,000 sq ft</p>
+        </div>
+        <div class="lot-card" data-lot="large" onclick="selectLot(this)">
+          <div class="lot-icon">⬜</div>
+          <h4>Large</h4>
+          <p>Over 10,000 sq ft</p>
+        </div>
+      </div>
+
+      <label class="field-label">Describe Your Vision (optional)</label>
+      <textarea class="textarea-field" id="visionNotes" placeholder="Tell us anything — ideas, inspiration, must-haves, or a Pinterest link…"></textarea>
+
+      <div class="dc-nav">
+        <button class="btn-back" onclick="prevStep()">← Back</button>
+        <button class="btn-next" onclick="nextStep()">Continue</button>
+      </div>
+    </div>
+
+    <!-- ─── STEP 6: Investment & Timeline ─── -->
+    <div class="step-panel" id="step6">
+      <h2 class="step-question">Investment & Timeline</h2>
+      <p class="step-prompt">Discerning choice, with full transparency.</p>
+
+      <label class="field-label">Budget Range</label>
+      <div class="budget-grid" id="budgetGrid">
+        <div class="budget-card" data-budget="50-100k" onclick="selectBudget(this)">
+          <h4>$50k – $100k</h4>
+          <p>Essential luxury</p>
+        </div>
+        <div class="budget-card" data-budget="100-200k" onclick="selectBudget(this)">
+          <h4>$100k – $200k</h4>
+          <p>Signature build</p>
+        </div>
+        <div class="budget-card" data-budget="200-350k" onclick="selectBudget(this)">
+          <h4>$200k – $350k</h4>
+          <p>Complete transformation</p>
+        </div>
+        <div class="budget-card" data-budget="350k+" onclick="selectBudget(this)">
+          <h4>$350k+</h4>
+          <p>No compromises</p>
+        </div>
+      </div>
+
+      <label class="field-label">When Would You Like to Start?</label>
+      <div class="timeline-grid">
+        <div class="budget-card" data-timeline="next-3-months" onclick="selectTimeline(this)">
+          <h4>Next 3 Months</h4>
+          <p>Ready to move</p>
+        </div>
+        <div class="budget-card" data-timeline="3-6-months" onclick="selectTimeline(this)">
+          <h4>3 – 6 Months</h4>
+          <p>Planning ahead</p>
+        </div>
+        <div class="budget-card" data-timeline="6-12-months" onclick="selectTimeline(this)">
+          <h4>6 – 12 Months</h4>
+          <p>Getting ideas</p>
+        </div>
+        <div class="budget-card" data-timeline="exploring" onclick="selectTimeline(this)">
+          <h4>Just Exploring</h4>
+          <p>Dreaming for now</p>
+        </div>
+      </div>
+
+      <div class="dc-nav">
+        <button class="btn-back" onclick="prevStep()">← Back</button>
+        <button class="btn-next" onclick="nextStep()">Continue</button>
+      </div>
+    </div>
+
+    <!-- ─── STEP 7: Contact Info ─── -->
+    <div class="step-panel" id="step7">
+      <h2 class="step-question">Almost There</h2>
+      <p class="step-prompt">Tell us how to find you. A designer — not a salesperson — will be in touch within one business day.</p>
+
+      <div class="contact-grid">
+        <div>
+          <label class="field-label">First Name *</label>
+          <input type="text" class="input-field" id="firstName" placeholder="First name" required>
+          <div class="error-msg" id="firstNameError">First name is required</div>
+        </div>
+        <div>
+          <label class="field-label">Last Name *</label>
+          <input type="text" class="input-field" id="lastName" placeholder="Last name" required>
+          <div class="error-msg" id="lastNameError">Last name is required</div>
+        </div>
+        <div>
+          <label class="field-label">Email *</label>
+          <input type="email" class="input-field" id="email" placeholder="you@example.com" required>
+          <div class="error-msg" id="emailError">Valid email is required</div>
+        </div>
+        <div>
+          <label class="field-label">Phone *</label>
+          <input type="tel" class="input-field" id="phone" placeholder="(480) 555-1234" required>
+          <div class="error-msg" id="phoneError">Phone number is required</div>
+        </div>
+        <div class="full-width">
+          <label class="field-label">Address (optional)</label>
+          <input type="text" class="input-field" id="address" placeholder="Street address, City, AZ">
+        </div>
+        <div class="full-width">
+          <label class="field-label">Preferred Contact Method</label>
+          <div class="contact-method-row">
+            <div class="contact-method selected" data-method="phone" onclick="selectContactMethod(this)">Phone Call</div>
+            <div class="contact-method" data-method="text" onclick="selectContactMethod(this)">Text</div>
+            <div class="contact-method" data-method="email" onclick="selectContactMethod(this)">Email</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dc-nav">
+        <button class="btn-back" onclick="prevStep()">← Back</button>
+        <button class="btn-submit" id="btnSubmit" onclick="submitDream()">Submit My Dream Design</button>
+      </div>
+    </div>
+
+    <!-- ─── SUMMARY / SUCCESS ─── -->
+    <div class="step-panel" id="stepSummary">
+      <h2 class="step-question">Your Dream, In One Place</h2>
+      <p class="step-prompt">Here's everything you've selected.</p>
+
+      <div class="estimate-banner" id="estimateBanner">
+        <div class="estimate-label">Estimated Investment</div>
+        <div class="estimate-value" id="estimateDisplay">$85k – $175k</div>
+        <div class="estimate-note">This is a preliminary range. Your designer will refine it during your Dream Review.</div>
+      </div>
+
+      <div class="summary-section" id="summaryDetails">
+        <!-- Populated dynamically -->
+      </div>
+
+      <div class="success-panel" id="successMessage" style="display:none;">
+        <div class="success-icon">✦</div>
+        <h2>Your Vision Is On Its Way</h2>
+        <p>An Arise designer will reach out within one business day to schedule your complimentary Dream Review — a 60-minute on-site consultation.</p>
+        <a href="#" class="btn-book">Schedule My Dream Review</a>
+      </div>
+    </div>
+
+  </div><!-- /dc-body -->
+</div><!-- /dream-center -->
+
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// DREAM CENTER — STATE & LOGIC
+// ═══════════════════════════════════════════════════════════════
+
+const state = {
+  currentStep: 1,
+  maxVisited: 1,
+  serviceType: '',
+  style: '',
+  features: [],
+  landscapeAddons: [],
+  lotSize: '',
+  visionNotes: '',
+  budgetRange: '',
+  timeline: '',
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: '',
+  address: '',
+  preferredContact: 'phone',
+};
+
+// ─── Service-specific style options ───
+const styleOptions = {
+  'custom-pool': [
+    { id: 'geometric',      icon: '▬',  label: 'Geometric Modern' },
+    { id: 'freeform',       icon: '〰',  label: 'Freeform Lagoon' },
+    { id: 'infinity-edge',  icon: '∞',  label: 'Infinity Edge' },
+    { id: 'plunge-pool',    icon: '◈',  label: 'Plunge Pool' },
+    { id: 'spa-pool-combo', icon: '♨',  label: 'Spa + Pool Combo' },
+    { id: 'explore',        icon: '✦',  label: "Let's Explore Together" },
+  ],
+  'landscape': [
+    { id: 'desert-modern',    icon: '🏜',  label: 'Desert Modern' },
+    { id: 'tropical-oasis',   icon: '🌴',  label: 'Tropical Oasis' },
+    { id: 'minimalist',       icon: '◻',  label: 'Minimalist Clean' },
+    { id: 'resort-style',     icon: '🏝',  label: 'Resort Style' },
+    { id: 'native-natural',   icon: '🌵',  label: 'Native & Natural' },
+    { id: 'explore',          icon: '✦',  label: "Let's Explore Together" },
+  ],
+  'pool-remodel': [
+    { id: 'modern-refresh',    icon: '✨',  label: 'Modern Refresh' },
+    { id: 'complete-overhaul', icon: '🔄',  label: 'Complete Overhaul' },
+    { id: 'surface-only',     icon: '◈',  label: 'Surface & Tile' },
+    { id: 'expand-reshape',   icon: '↔',  label: 'Expand & Reshape' },
+    { id: 'explore',          icon: '✦',  label: "Let's Explore Together" },
+  ],
+  'full-backyard': [
+    { id: 'resort-escape',    icon: '🏝',  label: 'Resort Escape' },
+    { id: 'modern-minimal',   icon: '▬',  label: 'Modern Minimal' },
+    { id: 'desert-sanctuary',  icon: '🏜',  label: 'Desert Sanctuary' },
+    { id: 'family-paradise',  icon: '👨‍👩‍👧‍👦', label: 'Family Paradise' },
+    { id: 'entertainer',      icon: '🎉',  label: 'The Entertainer' },
+    { id: 'explore',          icon: '✦',  label: "Let's Explore Together" },
+  ],
+  'hardscape': [
+    { id: 'travertine',   icon: '🪨',  label: 'Travertine' },
+    { id: 'flagstone',    icon: '◈',  label: 'Flagstone' },
+    { id: 'pavers',       icon: '⬛',  label: 'Pavers' },
+    { id: 'concrete',     icon: '▬',  label: 'Stamped Concrete' },
+    { id: 'mixed',        icon: '✦',  label: 'Mixed Materials' },
+  ],
+  'maintenance': [
+    { id: 'pool-only',       icon: '🏊',  label: 'Pool Care Only' },
+    { id: 'landscape-only',  icon: '🌿',  label: 'Landscape Only' },
+    { id: 'full-property',   icon: '🏡',  label: 'Full Property' },
+    { id: 'seasonal',        icon: '☀️',  label: 'Seasonal Deep Clean' },
+  ],
+};
+
+// ─── Service-specific feature options ───
+const featureOptions = {
+  'custom-pool': [
+    { group: 'Water Features', chips: ['Spa', 'Tanning Ledge', 'Waterfall', 'Grotto', 'Bubbler Jets', 'Swim-up Bar'] },
+    { group: 'Fire Features',  chips: ['Fire Bowls', 'Fire Pit', 'Fireplace Wall'] },
+    { group: 'Technology',     chips: ['LED Lighting', 'Full Automation', 'Salt System', 'Heater', 'Pool Cover'] },
+    { group: 'Decking',        chips: ['Travertine', 'Flagstone', 'Concrete', 'Pavers'] },
+  ],
+  'landscape': [
+    { group: 'Plantings',  chips: ['Desert Native', 'Tropical Plants', 'Artificial Turf', 'Real Grass', 'Mature Trees'] },
+    { group: 'Structures', chips: ['Retaining Walls', 'Privacy Walls', 'Planters', 'Raised Beds'] },
+    { group: 'Lighting',   chips: ['Path Lighting', 'Uplighting', 'String Lights', 'Moonlighting'] },
+    { group: 'Irrigation', chips: ['Drip System', 'Smart Timer', 'Rain Sensor'] },
+  ],
+  'pool-remodel': [
+    { group: 'Surface',    chips: ['PebbleTec', 'Glass Tile', 'New Plaster', 'Waterline Tile'] },
+    { group: 'Equipment',  chips: ['New Pump', 'Variable Speed', 'Salt System', 'Heater', 'Automation'] },
+    { group: 'Features',   chips: ['Add Spa', 'Add Tanning Ledge', 'Water Features', 'LED Lighting', 'New Coping'] },
+    { group: 'Decking',    chips: ['Resurface Deck', 'Expand Deck', 'New Material'] },
+  ],
+  'full-backyard': [
+    { group: 'Pool',       chips: ['Custom Pool', 'Spa', 'Tanning Ledge', 'Water Features', 'Fire Bowls'] },
+    { group: 'Outdoor Living', chips: ['Outdoor Kitchen', 'Pergola', 'Ramada', 'TV Wall', 'Sound System'] },
+    { group: 'Landscape',  chips: ['Artificial Turf', 'Desert Plants', 'Privacy Wall', 'Lighting Package'] },
+    { group: 'Technology', chips: ['Full Automation', 'LED Lighting', 'Smart Irrigation'] },
+  ],
+  'hardscape': [
+    { group: 'Surfaces',   chips: ['Pool Deck', 'Patio', 'Walkways', 'Driveway', 'Courtyard'] },
+    { group: 'Structures', chips: ['Retaining Walls', 'Seat Walls', 'Planters', 'Steps', 'Columns'] },
+    { group: 'Materials',  chips: ['Travertine', 'Flagstone', 'Pavers', 'Stamped Concrete', 'Stone Veneer'] },
+    { group: 'Details',    chips: ['Border Patterns', 'Inlays', 'Lighting Integration', 'Drainage'] },
+  ],
+  'maintenance': [
+    { group: 'Pool Care',  chips: ['Weekly Cleaning', 'Chemical Balancing', 'Filter Service', 'Equipment Checks'] },
+    { group: 'Landscape',  chips: ['Mowing & Trimming', 'Weed Control', 'Irrigation Checks', 'Tree Trimming'] },
+    { group: 'Seasonal',   chips: ['Monsoon Prep', 'Winter Drain-Down', 'Spring Startup', 'Deep Clean'] },
+    { group: 'Repairs',    chips: ['Pump Repair', 'Leak Detection', 'Tile Repair', 'Replastering'] },
+  ],
+};
+
+
+// ═══════════════════════════════════════════════════════════════
+// STEP NAVIGATION
+// ═══════════════════════════════════════════════════════════════
+
+function goToStep(n) {
+  if (n > state.maxVisited + 1) return; // can't skip ahead
+  showStep(n);
+}
+
+function nextStep() {
+  if (state.currentStep === 1 && !state.serviceType) return;
+  if (state.currentStep < 7) {
+    showStep(state.currentStep + 1);
+  }
+}
+
+function prevStep() {
+  if (state.currentStep > 1) {
+    showStep(state.currentStep - 1);
+  }
+}
+
+function showStep(n) {
+  // Hide all panels
+  document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+
+  // Show target panel
+  const panel = document.getElementById('step' + n);
+  if (panel) {
+    panel.classList.add('active');
+    // Re-trigger animation
+    panel.style.animation = 'none';
+    panel.offsetHeight; // reflow
+    panel.style.animation = '';
+  }
+
+  state.currentStep = n;
+  if (n > state.maxVisited) state.maxVisited = n;
+
+  // Populate dynamic content when entering a step
+  if (n === 2) populateStyles();
+  if (n === 3) populateFeatures();
+
+  updateProgress();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateProgress() {
+  document.querySelectorAll('.step-dot').forEach(dot => {
+    const s = parseInt(dot.dataset.step);
+    dot.classList.remove('active', 'completed');
+    if (s === state.currentStep) dot.classList.add('active');
+    else if (s < state.currentStep) dot.classList.add('completed');
+  });
+  document.querySelectorAll('.step-line').forEach(line => {
+    const s = parseInt(line.dataset.line);
+    line.classList.toggle('active', s < state.currentStep);
+  });
+}
+
+
+// ═══════════════════════════════════════════════════════════════
+// STEP 1 — SERVICE TYPE
+// ═══════════════════════════════════════════════════════════════
+
+function selectService(el) {
+  document.querySelectorAll('.service-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  state.serviceType = el.dataset.service;
+  // Reset downstream selections when service type changes
+  state.style = '';
+  state.features = [];
+  document.getElementById('btn1').disabled = false;
+}
+
+
+// ═══════════════════════════════════════════════════════════════
+// STEP 2 — STYLE (dynamic)
+// ═══════════════════════════════════════════════════════════════
+
+function populateStyles() {
+  const grid = document.getElementById('styleGrid');
+  const options = styleOptions[state.serviceType] || styleOptions['custom-pool'];
+  const prompts = {
+    'custom-pool':   'Each pool we build is a one-of-a-kind commission. Pick the direction that moves you.',
+    'landscape':     'Arizona landscapes deserve intention. Which direction speaks to you?',
+    'pool-remodel':  'How far do you want to take your remodel?',
+    'full-backyard': 'What\'s the overall vibe you\'re after?',
+    'hardscape':     'Which material palette draws you in?',
+    'maintenance':   'What level of care does your property need?',
+  };
+  document.getElementById('step2Prompt').textContent = prompts[state.serviceType] || prompts['custom-pool'];
+
+  grid.innerHTML = options.map(opt => `
+    <div class="style-card ${state.style === opt.id ? 'selected' : ''}" data-style="${opt.id}" onclick="selectStyle(this)">
+      <div class="style-img">${opt.icon}</div>
+      <div class="style-label">${opt.label}</div>
+    </div>
+  `).join('');
+
+  document.getElementById('btn2').disabled = !state.style;
+}
+
+function selectStyle(el) {
+  document.querySelectorAll('.style-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  state.style = el.dataset.style;
+  document.getElementById('btn2').disabled = false;
+}
+
+
+// ═══════════════════════════════════════════════════════════════
+// STEP 3 — FEATURES (dynamic)
+// ═══════════════════════════════════════════════════════════════
+
+function populateFeatures() {
+  const container = document.getElementById('featureChips');
+  const groups = featureOptions[state.serviceType] || featureOptions['custom-pool'];
+
+  container.innerHTML = groups.map(group => `
+    <div class="chip-group">
+      <div class="chip-group-label">${group.group}</div>
+      <div class="chip-row">
+        ${group.chips.map(chip => `
+          <div class="chip ${state.features.includes(chip) ? 'selected' : ''}" onclick="toggleChip(this, 'features')">${chip}</div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+
+// ═══════════════════════════════════════════════════════════════
+// CHIP TOGGLE (features & addons)
+// ═══════════════════════════════════════════════════════════════
+
+function toggleChip(el, type) {
+  el.classList.toggle('selected');
+  const label = el.textContent.trim();
+  const arr = type === 'features' ? state.features : state.landscapeAddons;
+  const idx = arr.indexOf(label);
+  if (idx >= 0) arr.splice(idx, 1);
+  else arr.push(label);
+}
+
+
+// ═══════════════════════════════════════════════════════════════
+// STEP 5 — LOT SIZE
+// ═══════════════════════════════════════════════════════════════
+
+function selectLot(el) {
+  document.querySelectorAll('.lot-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  state.lotSize = el.dataset.lot;
+}
+
+
+// ═══════════════════════════════════════════════════════════════
+// STEP 6 — BUDGET & TIMELINE
+// ═══════════════════════════════════════════════════════════════
+
+function selectBudget(el) {
+  document.querySelectorAll('#budgetGrid .budget-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  state.budgetRange = el.dataset.budget;
+}
+
+function selectTimeline(el) {
+  document.querySelectorAll('.timeline-grid .budget-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  state.timeline = el.dataset.timeline;
+}
+
+
+// ═══════════════════════════════════════════════════════════════
+// STEP 7 — CONTACT & PREFERRED METHOD
+// ═══════════════════════════════════════════════════════════════
+
+function selectContactMethod(el) {
+  document.querySelectorAll('.contact-method').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  state.preferredContact = el.dataset.method;
+}
+
+
+// ═══════════════════════════════════════════════════════════════
+// SUBMIT — validate, calculate, show summary, fire webhook
+// ═══════════════════════════════════════════════════════════════
+
+function submitDream() {
+  // Gather contact fields
+  state.firstName = document.getElementById('firstName').value.trim();
+  state.lastName  = document.getElementById('lastName').value.trim();
+  state.email     = document.getElementById('email').value.trim();
+  state.phone     = document.getElementById('phone').value.trim();
+  state.address   = document.getElementById('address').value.trim();
+  state.visionNotes = document.getElementById('visionNotes').value.trim();
+
+  // Validate
+  let valid = true;
+  if (!state.firstName) { showError('firstName'); valid = false; } else { clearError('firstName'); }
+  if (!state.lastName)  { showError('lastName');  valid = false; } else { clearError('lastName'); }
+  if (!state.email || !state.email.includes('@')) { showError('email'); valid = false; } else { clearError('email'); }
+  if (!state.phone)     { showError('phone');     valid = false; } else { clearError('phone'); }
+
+  if (!valid) return;
+
+  // Calculate estimate
+  const estimate = calculateEstimate();
+
+  // Show summary
+  document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('stepSummary').classList.add('active');
+
+  // Estimate display
+  if (estimate.isMonthly) {
+    document.getElementById('estimateDisplay').textContent = `$${estimate.low} – $${estimate.high}/mo`;
+  } else {
+    document.getElementById('estimateDisplay').textContent =
+      `$${(estimate.low / 1000).toFixed(0)}k – $${(estimate.high / 1000).toFixed(0)}k`;
+  }
+
+  // Summary details
+  const serviceLabels = {
+    'custom-pool': 'Custom Pool', 'landscape': 'Landscape Design',
+    'pool-remodel': 'Pool Remodel', 'full-backyard': 'Full Backyard',
+    'hardscape': 'Hardscape', 'maintenance': 'Full Backyard Maintenance',
+  };
+  const summaryHTML = `
+    <div class="summary-row"><span class="summary-label">Service</span><span class="summary-value">${serviceLabels[state.serviceType] || state.serviceType}</span></div>
+    <div class="summary-row"><span class="summary-label">Style</span><span class="summary-value">${state.style || '—'}</span></div>
+    <div class="summary-row"><span class="summary-label">Features</span><span class="summary-value">${state.features.length ? state.features.join(', ') : '—'}</span></div>
+    <div class="summary-row"><span class="summary-label">Landscape & Outdoor</span><span class="summary-value">${state.landscapeAddons.length ? state.landscapeAddons.join(', ') : '—'}</span></div>
+    <div class="summary-row"><span class="summary-label">Lot Size</span><span class="summary-value">${state.lotSize || '—'}</span></div>
+    <div class="summary-row"><span class="summary-label">Budget</span><span class="summary-value">${state.budgetRange || '—'}</span></div>
+    <div class="summary-row"><span class="summary-label">Timeline</span><span class="summary-value">${state.timeline || '—'}</span></div>
+    <div class="summary-row"><span class="summary-label">Contact</span><span class="summary-value">${state.firstName} ${state.lastName}</span></div>
+    <div class="summary-row"><span class="summary-label">Email</span><span class="summary-value">${state.email}</span></div>
+    <div class="summary-row"><span class="summary-label">Phone</span><span class="summary-value">${state.phone}</span></div>
+  `;
+  document.getElementById('summaryDetails').innerHTML = '<h3>Your Selections</h3>' + summaryHTML;
+
+  // Fire webhook (in a real Wix build, this calls the backend .jsw function)
+  fireGHLWebhook(estimate);
+
+  // Show success after a moment
+  setTimeout(() => {
+    document.getElementById('successMessage').style.display = 'block';
+  }, 1500);
+
+  // Update progress to show all complete
+  state.currentStep = 8;
+  updateProgress();
+}
+
+
+// ─── Client-side estimate (mirrors backend logic) ───
+function calculateEstimate() {
+  const baseRanges = {
+    'custom-pool':   { low: 85000,  high: 175000 },
+    'landscape':     { low: 25000,  high: 65000 },
+    'pool-remodel':  { low: 15000,  high: 55000 },
+    'full-backyard': { low: 120000, high: 300000 },
+    'hardscape':     { low: 20000,  high: 75000 },
+    'maintenance':   { low: 150,    high: 350 },
+  };
+  const base = baseRanges[state.serviceType] || baseRanges['custom-pool'];
+  let low = base.low, high = base.high;
+
+  if (state.serviceType === 'maintenance') return { low, high, isMonthly: true };
+
+  const styleMultipliers = {
+    'geometric': 1.0, 'freeform': 1.1, 'infinity-edge': 1.3,
+    'plunge-pool': 0.6, 'spa-pool-combo': 1.15, 'explore': 1.0,
+  };
+  const sm = styleMultipliers[state.style] || 1.0;
+  low = Math.round(low * sm); high = Math.round(high * sm);
+
+  if (state.features.length > 0) {
+    const fa = 1 + (state.features.length * 0.04);
+    low = Math.round(low * fa); high = Math.round(high * fa);
+  }
+  if (state.landscapeAddons.length > 0) {
+    const aa = 1 + (state.landscapeAddons.length * 0.035);
+    low = Math.round(low * aa); high = Math.round(high * aa);
+  }
+
+  const lotMultipliers = { 'small': 0.85, 'medium': 1.0, 'large': 1.2 };
+  const lm = lotMultipliers[state.lotSize] || 1.0;
+  low = Math.round(low * lm); high = Math.round(high * lm);
+
+  return { low, high, isMonthly: false };
+}
+
+
+// ─── Fire GHL Webhook directly (for standalone preview / Wix Velo calls the .jsw instead) ───
+function fireGHLWebhook(estimate) {
+  const tags = ['Dream Center Lead'];
+  const serviceLabels = {
+    'custom-pool': 'Custom Pool', 'landscape': 'Landscape Design',
+    'pool-remodel': 'Pool Remodel', 'full-backyard': 'Full Backyard',
+    'hardscape': 'Hardscape', 'maintenance': 'Maintenance',
+  };
+  if (serviceLabels[state.serviceType]) tags.push(serviceLabels[state.serviceType]);
+  if (state.timeline === 'next-3-months') tags.push('Hot Lead — Next 3 Months');
+
+  const payload = {
+    first_name: state.firstName,
+    last_name: state.lastName,
+    email: state.email,
+    phone: state.phone,
+    address1: state.address,
+    service_type: state.serviceType,
+    pool_style: state.style,
+    features: state.features.join(', '),
+    landscape_addons: state.landscapeAddons.join(', '),
+    lot_size: state.lotSize,
+    budget_range: state.budgetRange,
+    timeline: state.timeline,
+    vision_notes: state.visionNotes,
+    preferred_contact: state.preferredContact,
+    estimate_low: estimate.low,
+    estimate_high: estimate.high,
+    estimate_display: estimate.isMonthly
+      ? `$${estimate.low} – $${estimate.high}/mo`
+      : `$${(estimate.low/1000).toFixed(0)}k – $${(estimate.high/1000).toFixed(0)}k`,
+    tags: tags.join(', '),
+    source: 'dream-center',
+    submitted_at: new Date().toISOString(),
+  };
+
+  // POST to GHL Inbound Webhook
+  fetch('https://services.leadconnectorhq.com/hooks/UJDIrAYT4M5omfYGthyJ/webhook-trigger/a72f86e0-76a1-4489-a3d6-6dccb8f55e94', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  })
+  .then(res => {
+    if (!res.ok) console.error('GHL webhook error:', res.status);
+    else console.log('Dream Center submission sent to GHL');
+  })
+  .catch(err => console.error('GHL webhook failed:', err));
+}
+
+
+// ─── Validation helpers ───
+function showError(field) {
+  document.getElementById(field).classList.add('field-error');
+  document.getElementById(field + 'Error').classList.add('show');
+}
+function clearError(field) {
+  document.getElementById(field).classList.remove('field-error');
+  document.getElementById(field + 'Error').classList.remove('show');
+}
+</script>
+
+</body>
+</html>
