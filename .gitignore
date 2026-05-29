@@ -7,3 +7,15 @@ wix-velo-backend/
 wix-velo-frontend/
 push-to-github.sh
 Arise-Pools-CLIENT-MASTER.md
+.vercel
+
+# build tooling & QA artifacts
+qa/
+build.js
+_home-body.html
+_qa-shots.js
+_validate.js
+
+# session / transient
+.claude/
+.fuse_hidden*

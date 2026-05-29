@@ -1,0 +1,14 @@
+node_modules
+qa
+build.js
+_home-body.html
+_qa-shots.js
+_validate.js
+*.md
+wix-velo-backend
+wix-velo-frontend
+preview-assets
+push-to-github.sh
+Arise-Dream-Center-Configurator.html
+Arise-Pools-Visual-Preview.html
+.DS_Store
