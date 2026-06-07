@@ -1137,6 +1137,19 @@ body {
 .footer-logo-small:hover {
   opacity: 0.8;
 }
+.footer-hours-logo {
+  display: block;
+  margin-top: 14px;
+  height: 26px;
+  width: auto;
+  opacity: 0.65;
+  transition: opacity 0.2s;
+}
+
+.footer-hours-logo:hover {
+  opacity: 0.9;
+}
+
 
 /* ═══════════════════════════════════════════════════════
    PHOTO GALLERY — Full preview grid
