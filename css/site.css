@@ -1121,6 +1121,19 @@ body {
   color: rgba(247,241,232,0.3);
 }
 
+.footer-logo-small {
+  height: 16px;
+  width: auto;
+  opacity: 0.55;
+  margin-left: 14px;
+  vertical-align: middle;
+  transition: opacity 0.2s;
+}
+
+.footer-logo-small:hover {
+  opacity: 0.85;
+}
+
 /* ═══════════════════════════════════════════════════════
    PHOTO GALLERY — Full preview grid
    ═══════════════════════════════════════════════════════ */
