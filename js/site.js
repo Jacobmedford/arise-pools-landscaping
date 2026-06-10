@@ -94,7 +94,7 @@
         })
         .catch(function () {
           if (status) {
-            status.textContent = 'Something went wrong sending your message. Please call us at (480) 555-POOL.';
+            status.textContent = 'Something went wrong sending your message. Please call us at (623) 292-3073.';
             status.className = 'form-status error';
           }
         })
