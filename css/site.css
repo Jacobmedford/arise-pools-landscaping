@@ -812,7 +812,7 @@ body {
   content: counter(step);
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.5rem;
-  color: rgba(201,164,100,0.2);
+  color: var(--stone);
   display: block;
   margin-bottom: 12px;
   line-height: 1;
