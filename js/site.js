@@ -43,28 +43,15 @@
     if (sub) sub.classList.toggle('open');
   };
 
-  // ─── Lead capture endpoints (dual-post: GHL + n8n backup) ───
-  var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/UJDIrAYT4M5omfYGthyJ/webhook-trigger/a72f86e0-76a1-4489-a3d6-6dccb8f55e94';
+  // ─── Lead capture: all leads route through n8n, which fans out to the
+  //     Google Sheet backup and creates the GoHighLevel contact. ───
   var N8N_WEBHOOK = 'https://jacobmed.app.n8n.cloud/webhook/ariseleadcapture';
 
-  function postOne(url, payload) {
-    return fetch(url, {
+  function postToGHL(payload) {
+    return fetch(N8N_WEBHOOK, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
-    });
-  }
-
-  // Fire to both GHL and the n8n backup so no lead is lost if either is down.
-  // Resolves if at least one endpoint accepted the request.
-  function postToGHL(payload) {
-    return Promise.allSettled([
-      postOne(GHL_WEBHOOK, payload),
-      postOne(N8N_WEBHOOK, payload)
-    ]).then(function (results) {
-      var anyOk = results.some(function (r) { return r.status === 'fulfilled'; });
-      if (!anyOk) throw new Error('All lead endpoints unreachable');
-      return results;
     });
   }
 
