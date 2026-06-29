@@ -1397,17 +1397,23 @@ function fireGHLWebhook(estimate) {
     submitted_at: new Date().toISOString(),
   };
 
-  // POST to GHL Inbound Webhook
-  fetch('https://services.leadconnectorhq.com/hooks/UJDIrAYT4M5omfYGthyJ/webhook-trigger/a72f86e0-76a1-4489-a3d6-6dccb8f55e94', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
-  })
-  .then(res => {
-    if (!res.ok) console.error('GHL webhook error:', res.status);
-    else console.log('Dream Center submission sent to GHL');
-  })
-  .catch(err => console.error('GHL webhook failed:', err));
+  // Dual-post to GHL + n8n backup so no lead is lost if either is down.
+  const LEAD_ENDPOINTS = [
+    'https://services.leadconnectorhq.com/hooks/UJDIrAYT4M5omfYGthyJ/webhook-trigger/a72f86e0-76a1-4489-a3d6-6dccb8f55e94',
+    'https://jacobmed.app.n8n.cloud/webhook/ariseleadcapture'
+  ];
+  LEAD_ENDPOINTS.forEach(url => {
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+    .then(res => {
+      if (!res.ok) console.error('Lead webhook error:', url, res.status);
+      else console.log('Dream Center submission sent:', url);
+    })
+    .catch(err => console.error('Lead webhook failed:', url, err));
+  });
 }
 
 
