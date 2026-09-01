@@ -1,0 +1,179 @@
+{
+  "_comment": "Reservoir of distinct, non-cannibalizing blog angles for arisepal.com. The cron pops the oldest status:queued item each run, writes it, sets status:published with the slug + date, and never repeats. Each keyword is a long-tail or local angle NOT owned by a money page, a city page, or an existing post (see keyword-map.md). When fewer than 8 remain queued, the cron generates 6 to 10 fresh angles in the same spirit and appends them.",
+  "topics": [
+    {
+      "id": "a001",
+      "status": "queued",
+      "title": "Pool cost per square foot in Gilbert, AZ: what actually drives the price",
+      "keyword": "pool cost per square foot gilbert az",
+      "category": "cost-and-planning",
+      "localFocus": "Gilbert",
+      "internalLinks": ["/services/custom-pools", "/cities/gilbert"]
+    },
+    {
+      "id": "a002",
+      "status": "queued",
+      "title": "Desert modern landscape ideas for Paradise Valley estates",
+      "keyword": "desert modern landscaping paradise valley",
+      "category": "design",
+      "localFocus": "Paradise Valley",
+      "internalLinks": ["/services/landscape-design/desert-modern", "/cities/paradise-valley"]
+    },
+    {
+      "id": "a003",
+      "status": "queued",
+      "title": "Small-yard pool and spa combos for Tempe townhomes",
+      "keyword": "small pool spa combo tempe",
+      "category": "design",
+      "localFocus": "Tempe",
+      "internalLinks": ["/services/custom-pools/spa-integration", "/cities/tempe"]
+    },
+    {
+      "id": "a004",
+      "status": "queued",
+      "title": "Outdoor kitchen layouts built for Queen Creek entertaining",
+      "keyword": "outdoor kitchen layout queen creek",
+      "category": "design",
+      "localFocus": "Queen Creek",
+      "internalLinks": ["/services/outdoor-living/outdoor-kitchens", "/cities/queen-creek"]
+    },
+    {
+      "id": "a005",
+      "status": "queued",
+      "title": "A new pool owner's first-year maintenance checklist in Phoenix",
+      "keyword": "new pool owner maintenance checklist phoenix",
+      "category": "maintenance-tips",
+      "localFocus": "Phoenix",
+      "internalLinks": ["/services/pool-maintenance", "/cities/phoenix"]
+    },
+    {
+      "id": "a006",
+      "status": "queued",
+      "title": "Why San Tan Valley pools need more frequent chemical balancing",
+      "keyword": "san tan valley pool water balance",
+      "category": "maintenance-tips",
+      "localFocus": "San Tan Valley",
+      "internalLinks": ["/services/pool-maintenance", "/cities/san-tan-valley"]
+    },
+    {
+      "id": "a007",
+      "status": "queued",
+      "title": "Fighting algae in Cave Creek's hard well water",
+      "keyword": "algae prevention hard water cave creek",
+      "category": "maintenance-tips",
+      "localFocus": "Cave Creek",
+      "internalLinks": ["/services/pool-maintenance", "/cities/cave-creek"]
+    },
+    {
+      "id": "a008",
+      "status": "queued",
+      "title": "Fire features for cool evenings: outdoor living in Fountain Hills",
+      "keyword": "fire features outdoor living fountain hills",
+      "category": "arizona-lifestyle",
+      "localFocus": "Fountain Hills",
+      "internalLinks": ["/services/water-fire-features", "/cities/fountain-hills"]
+    },
+    {
+      "id": "a009",
+      "status": "queued",
+      "title": "Landscaping for HOA compliance in Scottsdale",
+      "keyword": "hoa compliant landscaping scottsdale",
+      "category": "arizona-lifestyle",
+      "localFocus": "Scottsdale",
+      "internalLinks": ["/services/landscape-design", "/cities/scottsdale"]
+    },
+    {
+      "id": "a010",
+      "status": "queued",
+      "title": "Shade-first backyard design for Gilbert's hottest months",
+      "keyword": "shade backyard design gilbert summer",
+      "category": "arizona-lifestyle",
+      "localFocus": "Gilbert",
+      "internalLinks": ["/services/outdoor-living", "/cities/gilbert"]
+    },
+    {
+      "id": "a011",
+      "status": "queued",
+      "title": "Pool remodel vs. rebuild: how to know which one your Mesa backyard needs",
+      "keyword": "pool remodel vs rebuild mesa",
+      "category": "cost-and-planning",
+      "localFocus": "Mesa",
+      "internalLinks": ["/services/pool-remodels", "/cities/mesa"]
+    },
+    {
+      "id": "a012",
+      "status": "queued",
+      "title": "What a sport court adds to resale value in Chandler",
+      "keyword": "backyard sport court value chandler",
+      "category": "cost-and-planning",
+      "localFocus": "Chandler",
+      "internalLinks": ["/services/hardscape", "/cities/chandler"]
+    },
+    {
+      "id": "a013",
+      "status": "queued",
+      "title": "Tropical oasis landscaping in a desert climate: what actually survives",
+      "keyword": "tropical landscaping desert climate arizona",
+      "category": "design",
+      "internalLinks": ["/services/landscape-design/tropical-oasis", "/services/landscape-design"]
+    },
+    {
+      "id": "a014",
+      "status": "queued",
+      "title": "Smart pool automation: what it actually controls and what it saves",
+      "keyword": "smart pool automation features",
+      "category": "design",
+      "internalLinks": ["/services/smart-pool", "/services/pool-maintenance"]
+    },
+    {
+      "id": "a015",
+      "status": "queued",
+      "title": "How long does a custom pool build actually take in the East Valley",
+      "keyword": "how long does a custom pool build take",
+      "category": "cost-and-planning",
+      "internalLinks": ["/process", "/services/custom-pools"]
+    },
+    {
+      "id": "a016",
+      "status": "queued",
+      "title": "Freeform vs. geometric pools: which fits your lot",
+      "keyword": "freeform vs geometric pool",
+      "category": "design",
+      "internalLinks": ["/services/custom-pools/freeform", "/services/custom-pools/geometric"]
+    },
+    {
+      "id": "a017",
+      "status": "queued",
+      "title": "Winterizing an Arizona pool: what to actually do when it's not really winter",
+      "keyword": "winterizing arizona pool",
+      "category": "maintenance-tips",
+      "internalLinks": ["/services/pool-maintenance", "/services/smart-pool"]
+    },
+    {
+      "id": "a018",
+      "status": "queued",
+      "title": "How Cave Creek's boulder terrain shapes landscape design",
+      "keyword": "boulder terrain landscape design cave creek",
+      "category": "arizona-lifestyle",
+      "localFocus": "Cave Creek",
+      "internalLinks": ["/services/landscape-design", "/cities/cave-creek"]
+    },
+    {
+      "id": "a019",
+      "status": "queued",
+      "title": "Water feature options that don't spike your water bill in Phoenix",
+      "keyword": "water feature water bill phoenix",
+      "category": "cost-and-planning",
+      "localFocus": "Phoenix",
+      "internalLinks": ["/services/water-fire-features", "/cities/phoenix"]
+    },
+    {
+      "id": "a020",
+      "status": "queued",
+      "title": "Planning a pool around Arizona's monsoon season, not just around it",
+      "keyword": "planning pool build monsoon season arizona",
+      "category": "arizona-lifestyle",
+      "internalLinks": ["/process", "/services/custom-pools"]
+    }
+  ]
+}
