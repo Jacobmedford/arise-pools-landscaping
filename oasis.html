@@ -249,8 +249,9 @@ a { color: inherit; }
 .o-sun .t { font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; display: block; margin-top: 4px; color: var(--gold-light); }
 
 /* ── Mobile sticky CTA ── */
-.o-sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 45; display: none; gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(26,24,20,.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transform: translateY(110%); transition: transform .45s var(--ease); }
-.o-sticky.show { transform: none; }
+.o-sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 45; display: none; gap: 8px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(26,24,20,.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transform: translateY(110%); transition: transform .45s var(--ease), visibility .45s; }
+.o-sticky { visibility: hidden; }
+.o-sticky.show { transform: none; visibility: visible; }
 .o-sticky a { flex: 1; text-align: center; padding: 15px 10px; font-size: .72rem; }
 
 /* ── Lightbox ── */
@@ -702,6 +703,7 @@ a { color: inherit; }
     document.querySelectorAll('.o-pane').forEach(function (p) { p.hidden = +p.getAttribute('data-pane') !== n; });
     bars.forEach(function (b, k) { b.classList.toggle('on', k < n); });
     if (n === 2) { document.getElementById('f_first').focus({ preventScroll: true }); track('form_step_2', { services: selected.join(', ') }); }
+    else { var t1 = document.querySelector('#tiles .o-tile'); if (t1) t1.focus({ preventScroll: true }); }
   }
   document.getElementById('next1').onclick = function () {
     if (!selected.length) { document.getElementById('err1').textContent = 'Pick at least one so we know where to start.'; return; }
@@ -729,8 +731,9 @@ a { color: inherit; }
     if (!f.last.value.trim()) bad.push(f.last);
     if (digits.length < 10) bad.push(f.phone);
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.value.trim())) bad.push(f.email);
-    Object.keys(f).forEach(function (k) { f[k].classList.toggle('bad', bad.indexOf(f[k]) > -1); });
-    if (bad.length) { err.textContent = 'Please check the highlighted fields.'; bad[0].focus(); return; }
+    var names = { first: 'first name', last: 'last name', phone: 'a 10-digit phone number', email: 'a valid email' };
+    Object.keys(f).forEach(function (k) { var b = bad.indexOf(f[k]) > -1; f[k].classList.toggle('bad', b); f[k].setAttribute('aria-invalid', b); f[k].setAttribute('aria-describedby', 'err2'); });
+    if (bad.length) { err.textContent = 'Please add your ' + Object.keys(f).filter(function (k) { return bad.indexOf(f[k]) > -1; }).map(function (k) { return names[k]; }).join(', ') + '.'; bad[0].focus(); return; }
     if (!selected.length) { showPane(1); document.getElementById('err1').textContent = 'Pick at least one so we know where to start.'; return; }
 
     var notes = document.getElementById('f_notes').value.trim();
@@ -758,7 +761,8 @@ a { color: inherit; }
     if (document.getElementById('f_company').value) { done(); return; }
     track('generate_lead', { form: 'oasis-funnel', services: payload.service_type });
     var send = function () { return fetch(N8N_WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }); };
-    send().then(function (r) { if (!r.ok) throw new Error(r.status); }).catch(function () { return send(); }).then(done, function () {
+    var ok = function (r) { if (!r.ok) throw new Error(r.status); };
+    send().then(ok).catch(function () { return send().then(ok); }).then(done, function () {
       btn.disabled = false; btn.innerHTML = 'Pick My Call Time <span class="arrow">&rarr;</span>';
       err.innerHTML = 'Something went wrong sending that. Please try again or call us at <a href="tel:+16232923073">(623) 292-3073</a>.';
     });
