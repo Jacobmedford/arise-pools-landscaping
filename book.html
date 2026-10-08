@@ -88,8 +88,8 @@ h1 em { color: var(--gold-light); }
 (function () {
   'use strict';
   // GoHighLevel 15-minute calendar embed URL (Calendars > Share > Embed, the iframe src).
-  // While empty, the page shows a "we'll call you" confirmation instead of the calendar.
-  var CALENDAR_URL = '';
+  // If emptied, the page falls back to a "we'll call you" confirmation.
+  var CALENDAR_URL = 'https://api.leadconnectorhq.com/widget/booking/Bf1AjBMIU9sL2k4N2lpv';
 
   var first = '';
   try { first = sessionStorage.getItem('arise_first_name') || ''; } catch (e) {}
@@ -101,9 +101,9 @@ h1 em { color: var(--gold-light); }
   var card = document.getElementById('calCard');
   if (CALENDAR_URL) {
     var f = document.createElement('iframe');
-    f.src = CALENDAR_URL; f.title = 'Book a 15-minute design call'; f.scrolling = 'no'; f.id = 'arise-booking';
+    f.src = CALENDAR_URL; f.title = 'Book a 15-minute design call'; f.scrolling = 'no'; f.id = 'Bf1AjBMIU9sL2k4N2lpv_1791498441764'; f.setAttribute('allow', 'payment'); f.style.overflow = 'hidden';
     card.appendChild(f);
-    var s = document.createElement('script'); s.src = 'https://link.msgsndr.com/js/form_embed.js'; s.async = true;
+    var s = document.createElement('script'); s.src = 'https://api.leadconnectorhq.com/js/form_embed.js'; s.async = true;
     document.body.appendChild(s);
     try { gtag('event', 'view_booking_calendar'); } catch (e) {}
   } else {
