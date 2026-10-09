@@ -122,10 +122,10 @@
     }
   ],
   "state": {
-    "nextFocus": "neighborhood",
-    "nextCityIndex": 0,
+    "nextFocus": "city",
+    "nextCityIndex": 1,
     "neighborhoodCursor": {
-      "gilbert": 0,
+      "gilbert": 1,
       "san-tan-valley": 0,
       "queen-creek": 0,
       "mesa": 0,
@@ -146,6 +146,14 @@
       "city": "Gilbert",
       "neighborhood": null,
       "featuredProject": "the-hidden-jewel"
+    },
+    {
+      "date": "2026-10-09",
+      "post": "custom-pool-builder-power-ranch-gilbert-az",
+      "focus": "neighborhood",
+      "city": "Gilbert",
+      "neighborhood": "Power Ranch",
+      "featuredProject": "family-focused"
     }
   ]
 }
