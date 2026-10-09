@@ -13,6 +13,8 @@ Repo is PUBLIC. Creative project names only. Client surnames live only in the pr
 | `js/portfolio-gallery.js` | Gallery data block (generated) | `scripts/projects-sync.py` only |
 | `oasis.html` | Funnel. Curated, hand-built. Do not regenerate or touch its form/webhook code | Humans, on request |
 
+CSS and JS cache for a day: after changing `css/site.css` or `js/portfolio-gallery.js`, bump the `?v=` on their links in index.html and portfolio.html.
+
 Never hand-edit the generated block. Edit `data/projects.json`, then run `python3 scripts/projects-sync.py`.
 
 ## Naming Function
