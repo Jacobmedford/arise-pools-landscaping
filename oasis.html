@@ -518,7 +518,18 @@ a { color: inherit; }
 <script>
 (function () {
   'use strict';
-  var N8N_WEBHOOK = 'https://jacobmed.app.n8n.cloud/webhook/ariseoasis';
+  // Funnel leads post straight to the GHL inbound webhook (workflow "New website - Engagement").
+  // n8n only keeps the Google Sheet backup; it no longer forwards to GHL.
+  var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/UJDIrAYT4M5omfYGthyJ/webhook-trigger/eea6dd51-7c5a-4039-a711-9dcf2a965dd6';
+  var SHEET_BACKUP = 'https://jacobmed.app.n8n.cloud/webhook/ariseoasis';
+  var ATTR_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'];
+  var attribution = (function () {
+    var qs = new URLSearchParams(location.search), out = {}, saved = {};
+    try { saved = JSON.parse(sessionStorage.getItem('arise_attr') || '{}'); } catch (e) {}
+    ATTR_KEYS.forEach(function (k) { out[k] = qs.get(k) || saved[k] || ''; });
+    try { sessionStorage.setItem('arise_attr', JSON.stringify(out)); } catch (e) {}
+    return out;
+  })();
 
   var P = function (slug, city) { return function (n, w) { return '/images/projects/' + slug + '/' + slug + '-' + city + '-az-' + (n < 10 ? '0' + n : n) + '-' + w + '.jpg'; }; };
   var PROJECTS = [
@@ -738,8 +749,7 @@ a { color: inherit; }
 
     var notes = document.getElementById('f_notes').value.trim();
     if (loved.length) notes = 'Inspired by: ' + loved.join(', ') + (notes ? '\n' + notes : '');
-    var qs = new URLSearchParams(location.search);
-    var utm = ['utm_source', 'utm_medium', 'utm_campaign'].map(function (k) { return qs.get(k) ? k + '=' + qs.get(k) : ''; }).filter(Boolean).join(' ');
+    var utm = ['utm_source', 'utm_medium', 'utm_campaign'].map(function (k) { return attribution[k] ? k + '=' + attribution[k] : ''; }).filter(Boolean).join(' ');
     var payload = {
       first_name: f.first.value.trim(),
       last_name: f.last.value.trim(),
@@ -760,9 +770,15 @@ a { color: inherit; }
     }
     if (document.getElementById('f_company').value) { done(); return; }
     track('generate_lead', { form: 'oasis-funnel', services: payload.service_type });
-    var send = function () { return fetch(N8N_WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }); };
-    var ok = function (r) { if (!r.ok) throw new Error(r.status); };
-    send().then(ok).catch(function () { return send().then(ok); }).then(done, function () {
+    var ghlPayload = Object.assign({}, payload, attribution, {
+      project_description: ['Services: ' + payload.service_type, notes ? 'Notes: ' + notes : ''].filter(Boolean).join('\n'),
+      landing_page: location.origin + location.pathname
+    });
+    var post = function (url, body) { return fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body), keepalive: true }).then(function (r) { if (!r.ok) throw new Error(r.status); return true; }); };
+    var toGhl = post(GHL_WEBHOOK, ghlPayload).catch(function () { return post(GHL_WEBHOOK, ghlPayload); }).then(function () { return true; }, function () { return false; });
+    var toSheet = post(SHEET_BACKUP, payload).then(function () { return true; }, function () { return false; });
+    // The lead counts as captured if it reached GHL or the sheet backup.
+    Promise.all([toGhl, toSheet]).then(function (r) { if (!r[0] && !r[1]) throw new Error('both failed'); }).then(done, function () {
       btn.disabled = false; btn.innerHTML = 'Pick My Call Time <span class="arrow">&rarr;</span>';
       err.innerHTML = 'Something went wrong sending that. Please try again or call us at <a href="tel:+16232923073">(623) 292-3073</a>.';
     });
