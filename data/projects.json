@@ -157,7 +157,9 @@
         }
       ],
       "cover": 2,
-      "featuredInPosts": []
+      "featuredInPosts": [
+        "custom-pool-builder-in-gilbert-az"
+      ]
     },
     {
       "slug": "the-modern-escape",

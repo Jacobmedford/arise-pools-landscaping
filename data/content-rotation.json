@@ -122,7 +122,7 @@
     }
   ],
   "state": {
-    "nextFocus": "city",
+    "nextFocus": "neighborhood",
     "nextCityIndex": 0,
     "neighborhoodCursor": {
       "gilbert": 0,
@@ -138,5 +138,14 @@
       "cave-creek": 0
     }
   },
-  "history": []
+  "history": [
+    {
+      "date": "2026-10-08",
+      "post": "custom-pool-builder-in-gilbert-az",
+      "focus": "city",
+      "city": "Gilbert",
+      "neighborhood": null,
+      "featuredProject": "the-hidden-jewel"
+    }
+  ]
 }
