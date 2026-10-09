@@ -11,7 +11,7 @@ gtag('config', 'G-FLPRD1LYFH');
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Book Your Design Call | Arise Pools &amp; Landscaping</title>
-<meta name="description" content="Pick a time for your free 15-minute design call with the Arise Pools &amp; Landscaping design manager.">
+<meta name="description" content="Pick a time for your free 30-minute design call with the Arise Pools &amp; Landscaping design manager.">
 <meta name="robots" content="noindex, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,7 +65,7 @@ h1 em { color: var(--gold-light); }
 
 <section class="hero">
   <div class="eyebrow">Request received</div>
-  <h1 id="greet">You're in. Now pick your <em>15 minutes.</em></h1>
+  <h1 id="greet">You're in. Now pick your <em>30 minutes.</em></h1>
   <p class="sub">Choose a time that works for you. Our design manager will call to talk through your ideas, your property and what's possible.</p>
   <div class="track">
     <span class="done"><i>&#10003;</i>Wish list sent</span>
@@ -87,7 +87,7 @@ h1 em { color: var(--gold-light); }
 <script>
 (function () {
   'use strict';
-  // GoHighLevel 15-minute calendar embed URL (Calendars > Share > Embed, the iframe src).
+  // GoHighLevel 30-minute calendar embed URL (Calendars > Share > Embed, the iframe src).
   // If emptied, the page falls back to a "we'll call you" confirmation.
   var CALENDAR_URL = 'https://api.leadconnectorhq.com/widget/booking/Bf1AjBMIU9sL2k4N2lpv';
 
@@ -101,14 +101,14 @@ h1 em { color: var(--gold-light); }
   var card = document.getElementById('calCard');
   if (CALENDAR_URL) {
     var f = document.createElement('iframe');
-    f.src = CALENDAR_URL; f.title = 'Book a 15-minute design call'; f.scrolling = 'no'; f.id = 'Bf1AjBMIU9sL2k4N2lpv_1791498441764'; f.setAttribute('allow', 'payment'); f.style.overflow = 'hidden';
+    f.src = CALENDAR_URL; f.title = 'Book a 30-minute design call'; f.scrolling = 'no'; f.id = 'Bf1AjBMIU9sL2k4N2lpv_1791498441764'; f.setAttribute('allow', 'payment'); f.style.overflow = 'hidden';
     card.appendChild(f);
     var s = document.createElement('script'); s.src = 'https://api.leadconnectorhq.com/js/form_embed.js'; s.async = true;
     document.body.appendChild(s);
     try { gtag('event', 'view_booking_calendar'); } catch (e) {}
   } else {
     card.innerHTML = '<div class="fallback"><h2>We\'ll reach out to lock in your call.</h2>' +
-      '<p>Our design manager will call or text within one business day to set up your 15-minute conversation. Want to talk sooner?</p>' +
+      '<p>Our design manager will call or text within one business day to set up your 30-minute conversation. Want to talk sooner?</p>' +
       '<a class="btn" href="tel:+16232923073">Call (623) 292-3073</a></div>';
   }
 })();
