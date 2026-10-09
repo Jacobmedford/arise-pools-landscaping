@@ -33,7 +33,7 @@ Every project gets a creative name before anything is published. Once a name is 
 
 ## A. New project intake
 
-Trigger: a new subfolder appears in Jared's Drive folder `114tsgW_kGn0eckE0TEPxe_XBAOBqs5SD` (folders are named by client surname, e.g. "Workman Pictures").
+Trigger: a new subfolder appears in Jared's Drive folder `114tsgW_kGn0eckE0TEPxe_XBAOBqs5SD` (folders are named by client surname, e.g. "Smith Pictures").
 
 1. Look up the surname in the private map. If the project already has a creative name (the 7 pending tiles do), use it. If not, pick one with the Naming Function and add it to the private map.
 2. Download the folder's images into a fresh empty dir (Drive direct download: `https://drive.usercontent.google.com/download?id=ID&export=download&confirm=t`).
