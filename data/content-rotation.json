@@ -1,0 +1,142 @@
+{
+  "_readme": "Blog rotation for the Arise content agent. One post per run. Focus alternates city -> neighborhood -> city. Cities go round-robin in list order; each city cycles through its neighborhoods. The agent updates state + history after every published post. Neighborhood names are targets, not facts: verify any specific claim (HOA rules, lot sizes, history) with agent-reach research before writing it.",
+  "cities": [
+    {
+      "slug": "gilbert",
+      "name": "Gilbert",
+      "page": "/cities/gilbert",
+      "neighborhoods": [
+        "Power Ranch",
+        "Val Vista Lakes",
+        "Morrison Ranch",
+        "Agritopia",
+        "Seville"
+      ]
+    },
+    {
+      "slug": "san-tan-valley",
+      "name": "San Tan Valley",
+      "page": "/cities/san-tan-valley",
+      "neighborhoods": [
+        "Johnson Ranch",
+        "San Tan Heights",
+        "Pecan Creek",
+        "Encanterra"
+      ]
+    },
+    {
+      "slug": "queen-creek",
+      "name": "Queen Creek",
+      "page": "/cities/queen-creek",
+      "neighborhoods": [
+        "Queen Creek Station",
+        "Hastings Farms",
+        "Harvest Queen Creek",
+        "The Pecans"
+      ]
+    },
+    {
+      "slug": "mesa",
+      "name": "Mesa",
+      "page": "/cities/mesa",
+      "neighborhoods": [
+        "Eastmark",
+        "Las Sendas",
+        "Red Mountain Ranch",
+        "Dobson Ranch"
+      ]
+    },
+    {
+      "slug": "chandler",
+      "name": "Chandler",
+      "page": "/cities/chandler",
+      "neighborhoods": [
+        "Ocotillo",
+        "Fulton Ranch",
+        "Layton Lakes",
+        "Sun Groves"
+      ]
+    },
+    {
+      "slug": "scottsdale",
+      "name": "Scottsdale",
+      "page": "/cities/scottsdale",
+      "neighborhoods": [
+        "McCormick Ranch",
+        "DC Ranch",
+        "Silverleaf",
+        "Gainey Ranch",
+        "Troon North"
+      ]
+    },
+    {
+      "slug": "paradise-valley",
+      "name": "Paradise Valley",
+      "page": "/cities/paradise-valley",
+      "neighborhoods": [
+        "Mummy Mountain",
+        "Camelback Country Club Estates",
+        "Cheney Estates"
+      ]
+    },
+    {
+      "slug": "phoenix",
+      "name": "Phoenix",
+      "page": "/cities/phoenix",
+      "neighborhoods": [
+        "Arcadia",
+        "Ahwatukee Foothills",
+        "Desert Ridge",
+        "Biltmore"
+      ]
+    },
+    {
+      "slug": "tempe",
+      "name": "Tempe",
+      "page": "/cities/tempe",
+      "neighborhoods": [
+        "The Lakes",
+        "Warner Ranch",
+        "Kiwanis Park area"
+      ]
+    },
+    {
+      "slug": "fountain-hills",
+      "name": "Fountain Hills",
+      "page": "/cities/fountain-hills",
+      "neighborhoods": [
+        "FireRock",
+        "Eagle Mountain",
+        "CopperWynd"
+      ]
+    },
+    {
+      "slug": "cave-creek",
+      "name": "Cave Creek",
+      "page": "/cities/cave-creek",
+      "neighborhoods": [
+        "Tatum Ranch",
+        "Black Mountain",
+        "Desert Foothills"
+      ]
+    }
+  ],
+  "state": {
+    "nextFocus": "city",
+    "nextCityIndex": 0,
+    "neighborhoodCursor": {
+      "gilbert": 0,
+      "san-tan-valley": 0,
+      "queen-creek": 0,
+      "mesa": 0,
+      "chandler": 0,
+      "scottsdale": 0,
+      "paradise-valley": 0,
+      "phoenix": 0,
+      "tempe": 0,
+      "fountain-hills": 0,
+      "cave-creek": 0
+    }
+  },
+  "history": []
+}

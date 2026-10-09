@@ -1,0 +1,370 @@
+{
+  "_readme": "Single source of truth for Arise project names, photos and where each project is used. Public file: creative names only, never client surnames (private map lives in ClaudeCode-Master/Clients/Arise Pool and Landscaping/CLAUDE.md). Edit here, then run: python3 scripts/projects-sync.py",
+  "photoPattern": "/images/projects/{slug}/{slug}-{cityFile}-az-{NN}-{1800|900}.jpg",
+  "projects": [
+    {
+      "slug": "the-desert-escape",
+      "status": "live",
+      "name": "The Desert Escape",
+      "city": "Superstition Mountains",
+      "neighborhood": null,
+      "cityFile": "superstition-mountains",
+      "cityPage": null,
+      "tagline": "Luxury Outdoor Living",
+      "styles": [
+        "desert modern",
+        "travertine",
+        "stacked stone",
+        "outdoor kitchen",
+        "sheer descents",
+        "mountain views"
+      ],
+      "blurb": "Travertine decking, a stacked-stone outdoor kitchen and a pool lined up dead center with the Superstition skyline.",
+      "photos": [
+        {
+          "n": 7,
+          "alt": "Pool with sheer water features at dusk"
+        },
+        {
+          "n": 6,
+          "alt": "Bar seating beside the pool under a mountain sunset"
+        },
+        {
+          "n": 5,
+          "alt": "Stacked-stone outdoor kitchen with built-in grill"
+        },
+        {
+          "n": 3,
+          "alt": "Covered patio and travertine deck at sunset"
+        },
+        {
+          "n": 4,
+          "alt": "Outdoor kitchen wrapped in stacked stone"
+        },
+        {
+          "n": 2,
+          "alt": "Aerial view of the pool and travertine patio"
+        },
+        {
+          "n": 1,
+          "alt": "Desert front yard landscaping below the Superstitions"
+        }
+      ],
+      "cover": 7,
+      "featuredInPosts": []
+    },
+    {
+      "slug": "legacy-living",
+      "status": "live",
+      "name": "Legacy Living",
+      "city": "San Tan Valley",
+      "neighborhood": null,
+      "cityFile": "san-tan-valley",
+      "cityPage": "/cities/san-tan-valley",
+      "tagline": "Ultimate Oasis",
+      "styles": [
+        "resort",
+        "raised spa",
+        "palms",
+        "turf ribbons",
+        "pickleball court",
+        "pool house"
+      ],
+      "blurb": "A full-lot resort: pool and raised spa, palms, turf ribbons through the deck, a lounge terrace and a lit pickleball court.",
+      "photos": [
+        {
+          "n": 3,
+          "alt": "Pool and spa framed by palms at sunset"
+        },
+        {
+          "n": 4,
+          "alt": "Raised spa spillover and lawn at sunset"
+        },
+        {
+          "n": 6,
+          "alt": "Pool with raised spa spillover"
+        },
+        {
+          "n": 2,
+          "alt": "Lounge deck with chaises and pool house"
+        },
+        {
+          "n": 8,
+          "alt": "Travertine deck with turf ribbons and spa"
+        },
+        {
+          "n": 1,
+          "alt": "Aerial view of the lit pickleball court"
+        },
+        {
+          "n": 7,
+          "alt": "Overhead view of the full backyard layout"
+        },
+        {
+          "n": 5,
+          "alt": "Front walkway and landscaping at dusk"
+        }
+      ],
+      "cover": 3,
+      "featuredInPosts": []
+    },
+    {
+      "slug": "the-hidden-jewel",
+      "status": "live",
+      "name": "The Hidden Jewel",
+      "city": "Gilbert",
+      "neighborhood": null,
+      "cityFile": "gilbert",
+      "cityPage": "/cities/gilbert",
+      "tagline": "Modern Makeover",
+      "styles": [
+        "freeform pool",
+        "lit step-down entry",
+        "covered bar",
+        "fire pit",
+        "front yard refresh",
+        "remodel"
+      ],
+      "blurb": "A freeform pool with glowing step-down benches, a covered bar with its own TV, and a front yard refreshed to match.",
+      "photos": [
+        {
+          "n": 2,
+          "alt": "Lit step-down pool entry with the covered bar beyond"
+        },
+        {
+          "n": 3,
+          "alt": "Freeform pool and spa at twilight"
+        },
+        {
+          "n": 1,
+          "alt": "Freeform pool and covered patio at dusk"
+        },
+        {
+          "n": 7,
+          "alt": "Covered outdoor bar with TV and seating"
+        },
+        {
+          "n": 4,
+          "alt": "Raised spa and fire pit"
+        },
+        {
+          "n": 6,
+          "alt": "Refreshed front yard with turf and planters"
+        },
+        {
+          "n": 5,
+          "alt": "Front of the home"
+        }
+      ],
+      "cover": 2,
+      "featuredInPosts": []
+    },
+    {
+      "slug": "the-modern-escape",
+      "status": "live",
+      "name": "The Modern Escape",
+      "city": "Gold Canyon",
+      "neighborhood": null,
+      "cityFile": "gold-canyon",
+      "cityPage": null,
+      "tagline": "Living Luxurious",
+      "styles": [
+        "contemporary",
+        "in-water loungers",
+        "linear fire table",
+        "stacked stone",
+        "spa",
+        "mountain views"
+      ],
+      "blurb": "Clean lines everywhere: in-water loungers, linear fire tables and stacked stone, all built for long evenings in Gold Canyon.",
+      "photos": [
+        {
+          "n": 1,
+          "alt": "Pool with in-water loungers at dusk"
+        },
+        {
+          "n": 4,
+          "alt": "Fire table facing the pool with mountain views"
+        },
+        {
+          "n": 2,
+          "alt": "Linear fire table under the covered patio"
+        },
+        {
+          "n": 5,
+          "alt": "Pool and patio at blue hour"
+        },
+        {
+          "n": 7,
+          "alt": "Aerial view of the pool, spa and turf"
+        },
+        {
+          "n": 3,
+          "alt": "Lit desert landscape along the drive"
+        },
+        {
+          "n": 6,
+          "alt": "Stone entry courtyard"
+        }
+      ],
+      "cover": 1,
+      "featuredInPosts": []
+    },
+    {
+      "slug": "family-focused",
+      "status": "live",
+      "name": "Family Focused",
+      "city": "Gilbert",
+      "neighborhood": null,
+      "cityFile": "gilbert",
+      "cityPage": "/cities/gilbert",
+      "tagline": "Captured Memories",
+      "styles": [
+        "family resort",
+        "pergolas",
+        "string lights",
+        "turf lawn",
+        "yard games",
+        "fire pit"
+      ],
+      "blurb": "Pergolas around the pool and spa, a turf lawn for yard games, string lights overhead and a fire pit tucked into the citrus.",
+      "photos": [
+        {
+          "n": 1,
+          "alt": "Pool and spa under string lights at night"
+        },
+        {
+          "n": 6,
+          "alt": "Pool and lounge chairs at night"
+        },
+        {
+          "n": 2,
+          "alt": "Pool with sheer descents and loungers"
+        },
+        {
+          "n": 3,
+          "alt": "Turf lawn with pergola bar and yard games"
+        },
+        {
+          "n": 4,
+          "alt": "Spa and pool at sunset"
+        },
+        {
+          "n": 5,
+          "alt": "Pool and home at night under the moon"
+        },
+        {
+          "n": 7,
+          "alt": "Fire pit in the citrus grove"
+        }
+      ],
+      "cover": 1,
+      "featuredInPosts": []
+    },
+    {
+      "slug": "intimate-escape",
+      "status": "awaiting-photos",
+      "name": "Intimate Escape",
+      "city": "Surprise",
+      "neighborhood": null,
+      "cityFile": "surprise",
+      "cityPage": null,
+      "tagline": "Optimized Design",
+      "styles": [],
+      "blurb": "",
+      "photos": [],
+      "cover": null,
+      "featuredInPosts": []
+    },
+    {
+      "slug": "the-modern-family",
+      "status": "awaiting-photos",
+      "name": "The Modern Family",
+      "city": "Cave Creek",
+      "neighborhood": null,
+      "cityFile": "cave-creek",
+      "cityPage": "/cities/cave-creek",
+      "tagline": "Staycation Awaits",
+      "styles": [],
+      "blurb": "",
+      "photos": [],
+      "cover": null,
+      "featuredInPosts": []
+    },
+    {
+      "slug": "ready-set-go",
+      "status": "awaiting-photos",
+      "name": "Ready Set Go",
+      "city": "Phoenix",
+      "neighborhood": null,
+      "cityFile": "phoenix",
+      "cityPage": "/cities/phoenix",
+      "tagline": "Remodel In Action",
+      "styles": [],
+      "blurb": "",
+      "photos": [],
+      "cover": null,
+      "featuredInPosts": []
+    },
+    {
+      "slug": "sleek-opulence",
+      "status": "awaiting-photos",
+      "name": "Sleek Opulence",
+      "city": "Gold Canyon",
+      "neighborhood": null,
+      "cityFile": "gold-canyon",
+      "cityPage": null,
+      "tagline": "Minimalist Escape",
+      "styles": [],
+      "blurb": "",
+      "photos": [],
+      "cover": null,
+      "featuredInPosts": []
+    },
+    {
+      "slug": "winter-retreat",
+      "status": "awaiting-photos",
+      "name": "Winter Retreat",
+      "city": "Gold Canyon",
+      "neighborhood": null,
+      "cityFile": "gold-canyon",
+      "cityPage": null,
+      "tagline": "Collective Purpose",
+      "styles": [],
+      "blurb": "",
+      "photos": [],
+      "cover": null,
+      "featuredInPosts": []
+    },
+    {
+      "slug": "elevated-entertainment",
+      "status": "awaiting-photos",
+      "name": "Elevated Entertainment",
+      "city": "Goodyear",
+      "neighborhood": null,
+      "cityFile": "goodyear",
+      "cityPage": null,
+      "tagline": "Bold Mixed Fusion",
+      "styles": [],
+      "blurb": "",
+      "photos": [],
+      "cover": null,
+      "featuredInPosts": []
+    },
+    {
+      "slug": "layered-confidence",
+      "status": "awaiting-photos",
+      "name": "Layered Confidence",
+      "city": "Ahwatukee Foothills",
+      "neighborhood": null,
+      "cityFile": "ahwatukee-foothills",
+      "cityPage": null,
+      "tagline": "Dimensional Destination",
+      "styles": [],
+      "blurb": "",
+      "photos": [],
+      "cover": null,
+      "featuredInPosts": []
+    }
+  ]
+}

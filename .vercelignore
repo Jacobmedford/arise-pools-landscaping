@@ -12,3 +12,5 @@ push-to-github.sh
 Arise-Dream-Center-Configurator.html
 Arise-Pools-Visual-Preview.html
 .DS_Store
+scripts/
+ops/

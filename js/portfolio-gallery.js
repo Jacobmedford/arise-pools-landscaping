@@ -11,6 +11,7 @@
     return function (n, w) { return '/images/projects/' + slug + '/' + slug + '-' + city + '-az-' + (n < 10 ? '0' + n : n) + '-' + w + '.jpg'; };
   }
 
+  // BEGIN GENERATED PROJECTS (scripts/projects-sync.py from data/projects.json; do not hand-edit)
   var PROJECTS = {
     'the-desert-escape': { name: 'The Desert Escape', city: 'Superstition Mountains', img: P('the-desert-escape', 'superstition-mountains'),
       photos: [[7, 'Pool with sheer water features at dusk'], [6, 'Bar seating beside the pool under a mountain sunset'], [5, 'Stacked-stone outdoor kitchen with built-in grill'], [3, 'Covered patio and travertine deck at sunset'], [4, 'Outdoor kitchen wrapped in stacked stone'], [2, 'Aerial view of the pool and travertine patio'], [1, 'Desert front yard landscaping below the Superstitions']] },
@@ -23,6 +24,7 @@
     'family-focused': { name: 'Family Focused', city: 'Gilbert', img: P('family-focused', 'gilbert'),
       photos: [[1, 'Pool and spa under string lights at night'], [6, 'Pool and lounge chairs at night'], [2, 'Pool with sheer descents and loungers'], [3, 'Turf lawn with pergola bar and yard games'], [4, 'Spa and pool at sunset'], [5, 'Pool and home at night under the moon'], [7, 'Fire pit in the citrus grove']] }
   };
+  // END GENERATED PROJECTS
 
   var tiles = document.querySelectorAll('[data-project]');
   if (!tiles.length) return;
@@ -109,5 +111,13 @@
     t.appendChild(badge);
     t.addEventListener('click', function () { open(slug, 0); });
     t.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(slug, 0); } });
+    if (!document.getElementById(slug)) t.id = slug;
   });
+
+  // Deep link: /portfolio#the-hidden-jewel opens that project's gallery (used by blog posts).
+  var hash = decodeURIComponent(location.hash.slice(1));
+  if (PROJECTS[hash] && document.querySelector('[data-project="' + hash + '"]')) {
+    document.getElementById(hash).scrollIntoView({ block: 'center' });
+    open(hash, 0);
+  }
 })();
