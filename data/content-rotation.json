@@ -122,7 +122,7 @@
     }
   ],
   "state": {
-    "nextFocus": "city",
+    "nextFocus": "neighborhood",
     "nextCityIndex": 1,
     "neighborhoodCursor": {
       "gilbert": 1,
@@ -154,6 +154,14 @@
       "city": "Gilbert",
       "neighborhood": "Power Ranch",
       "featuredProject": "family-focused"
+    },
+    {
+      "date": "2026-10-11",
+      "post": "custom-pool-builder-san-tan-valley-az",
+      "focus": "city",
+      "city": "San Tan Valley",
+      "neighborhood": null,
+      "featuredProject": "legacy-living"
     }
   ]
 }
