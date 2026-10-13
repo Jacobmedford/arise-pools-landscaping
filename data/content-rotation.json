@@ -122,11 +122,11 @@
     }
   ],
   "state": {
-    "nextFocus": "neighborhood",
-    "nextCityIndex": 1,
+    "nextFocus": "city",
+    "nextCityIndex": 2,
     "neighborhoodCursor": {
       "gilbert": 1,
-      "san-tan-valley": 0,
+      "san-tan-valley": 1,
       "queen-creek": 0,
       "mesa": 0,
       "chandler": 0,
@@ -161,6 +161,14 @@
       "focus": "city",
       "city": "San Tan Valley",
       "neighborhood": null,
+      "featuredProject": "legacy-living"
+    },
+    {
+      "date": "2026-10-13",
+      "post": "pool-builder-johnson-ranch-san-tan-valley-az",
+      "focus": "neighborhood",
+      "city": "San Tan Valley",
+      "neighborhood": "Johnson Ranch",
       "featuredProject": "legacy-living"
     }
   ]
