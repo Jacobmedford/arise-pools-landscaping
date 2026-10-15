@@ -290,6 +290,8 @@ a { color: inherit; }
   .o-sun { display: none; }
 }
 @media (max-width: 700px) {
+  /* The hero already displays the brand; avoid a fixed duplicate on mobile. */
+  .o-bar { display: none; }
   .o-phone { display: none; }
   .o-bar .btn { display: none; }
   .o-hero-credit { display: none; }
