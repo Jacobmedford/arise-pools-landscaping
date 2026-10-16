@@ -155,8 +155,8 @@ body::after {
 
 /* ── "Book a Design Call" slide-over ── */
 .gh-drawer-scrim { position: fixed; inset: 0; z-index: 1200; background: rgba(10,9,8,.55); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); opacity: 0; pointer-events: none; transition: opacity .4s var(--ease); }
-.gh-drawer { position: fixed; top: 0; right: 0; bottom: 0; z-index: 1201; width: min(560px, 100vw); background: var(--cream); box-shadow: -30px 0 80px -30px rgba(10,9,8,.6); transform: translateX(104%); transition: transform .55s var(--ease); display: flex; flex-direction: column; }
-.gh-drawer.open { transform: none; }
+.gh-drawer { position: fixed; top: 0; right: 0; bottom: 0; z-index: 1201; width: min(560px, 100vw); background: var(--cream); box-shadow: -30px 0 80px -30px rgba(10,9,8,.6); transform: translateX(104%); visibility: hidden; transition: transform .55s var(--ease), visibility 0s linear .55s; display: flex; flex-direction: column; }
+.gh-drawer.open { transform: none; visibility: visible; transition: transform .55s var(--ease), visibility 0s; }
 .gh-drawer-scrim.open { opacity: 1; pointer-events: auto; }
 .gh-drawer-head { position: relative; padding: 28px 28px 18px; background: linear-gradient(180deg, var(--stone), #2a241d); color: var(--cream); overflow: hidden; }
 .gh-drawer-head::after { content: ""; position: absolute; inset: 0; background: url('/images/projects/the-desert-escape/the-desert-escape-superstition-mountains-az-07-900.jpg') center 65% / cover; opacity: .28; }

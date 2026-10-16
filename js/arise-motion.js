@@ -142,6 +142,7 @@
         '<h2>Four questions to <em>your backyard.</em></h2></div>' +
       '<div class="gh-drawer-body"><div class="lead-survey" data-source="site-drawer-' + page + '" data-tags="Website Survey, Drawer"></div></div>' +
       '<div class="gh-drawer-foot">Rather talk now? Call <a href="tel:+16232923073">(623) 292-3073</a></div>';
+    drawer.setAttribute('aria-hidden', 'true'); drawer.inert = true;
     document.body.appendChild(scrim); document.body.appendChild(drawer);
     scrim.addEventListener('click', closeDrawer);
     drawer.querySelector('.gh-drawer-x').addEventListener('click', closeDrawer);
@@ -163,6 +164,7 @@
     ensureAssets(function () {
       window.AriseSurvey.mount(drawer.querySelector('.lead-survey'));
       requestAnimationFrame(function () {
+        drawer.inert = false; drawer.removeAttribute('aria-hidden');
         scrim.classList.add('open'); drawer.classList.add('open'); document.body.classList.add('gh-lock');
         var first = drawer.querySelector('.ls-tile'); if (first) first.focus({ preventScroll: true });
       });
@@ -172,6 +174,7 @@
   function closeDrawer() {
     if (!drawer) return;
     scrim.classList.remove('open'); drawer.classList.remove('open'); document.body.classList.remove('gh-lock');
+    drawer.setAttribute('aria-hidden', 'true'); drawer.inert = true;
     if (lastFocus) lastFocus.focus();
   }
   window.AriseDrawer = { open: openDrawer, close: closeDrawer };
@@ -181,7 +184,7 @@
     if (!el) return;
     if (label) el.textContent = label;
     el.setAttribute('href', '#book');
-    el.setAttribute('role', 'button');
+    el.setAttribute('aria-haspopup', 'dialog');
     el.addEventListener('click', function (e) {
       e.preventDefault();
       var dw = document.getElementById('mobileDrawer');
