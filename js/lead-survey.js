@@ -222,10 +222,16 @@
     };
   }
 
-  document.querySelectorAll('.lead-survey').forEach(function (el, i) { instances.push(build(el, i)); });
+  function mount(el) {
+    if (!el || el.getAttribute('data-built')) return;
+    el.setAttribute('data-built', '1');
+    instances.push(build(el, instances.length));
+  }
+  document.querySelectorAll('.lead-survey').forEach(mount);
 
   // Small API for pages that want to pre-fill the survey (the /oasis "save as inspiration" buttons).
   window.AriseSurvey = {
+    mount: mount,
     addService: function (v) { instances.forEach(function (s) { s.addService(v); }); },
     setInspiration: function (name, on) { instances.forEach(function (s) { s.setInspiration(name, on); }); }
   };
