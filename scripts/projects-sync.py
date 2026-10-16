@@ -21,6 +21,17 @@ def photo_path(p, n, w):
     return os.path.join(ROOT, 'images', 'projects', p['slug'], '%s-%s-az-%02d-%d.jpg' % (p['slug'], p['cityFile'], n, w))
 
 
+def full_url(p, ph):
+    """Largest version for the lightbox: registry `full`, else a -full.jpg next to it, else the 1800px file."""
+    if ph.get('full'):
+        return ph['full']
+    for suffix in ('full', 1800):
+        rel = 'images/projects/%s/%s-%s-az-%02d-%s.jpg' % (p['slug'], p['slug'], p['cityFile'], ph['n'], suffix)
+        if os.path.exists(os.path.join(ROOT, rel)):
+            return '/' + rel
+    return None
+
+
 def js_str(s):
     return "'" + s.replace('\\', '\\\\').replace("'", "\\'") + "'"
 
@@ -40,15 +51,19 @@ def main():
         for ph in p['photos']:
             if not ph.get('alt') or ph['alt'].lower().startswith('photo '):
                 problems.append('%s photo %s: needs a real alt text' % (p['slug'], ph['n']))
-            for w in (1800, 900):
-                if not os.path.exists(photo_path(p, ph['n'], w)):
-                    problems.append('missing file %s' % os.path.relpath(photo_path(p, ph['n'], w), ROOT))
+            if not os.path.exists(photo_path(p, ph['n'], 900)):
+                problems.append('missing file %s' % os.path.relpath(photo_path(p, ph['n'], 900), ROOT))
+            full = full_url(p, ph)
+            if not full:
+                problems.append('%s photo %s: no full-size or 1800px file' % (p['slug'], ph['n']))
+            elif not os.path.exists(os.path.join(ROOT, full.lstrip('/'))):
+                problems.append('missing full-size file %s' % full)
         if re.search(r'surname|client', p['name'], re.I):
             problems.append('%s: name looks like a placeholder' % p['slug'])
 
     lines = ['  var PROJECTS = {']
     for k, p in enumerate(live):
-        photos = ', '.join('[%d, %s]' % (ph['n'], js_str(ph['alt'])) for ph in p['photos'])
+        photos = ', '.join('[%d, %s, %s]' % (ph['n'], js_str(ph['alt']), js_str(full_url(p, ph) or '')) for ph in p['photos'])
         lines.append("    %s: { name: %s, city: %s, img: P(%s, %s),\n      photos: [%s] }%s" % (
             js_str(p['slug']), js_str(p['name']), js_str(p['city']), js_str(p['slug']), js_str(p['cityFile']), photos,
             ',' if k < len(live) - 1 else ''))

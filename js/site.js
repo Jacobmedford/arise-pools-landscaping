@@ -86,9 +86,11 @@
 
       if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
       postToGHL(data)
+        .then(function (res) { if (!res.ok) throw new Error(res.status); return res; })
+        .catch(function () { return postToGHL(data).then(function (res) { if (!res.ok) throw new Error(res.status); return res; }); })
         .then(function (res) {
           if (status) {
-            status.textContent = 'Thank you — your message is on its way. We’ll be in touch within one business day.';
+            status.textContent = 'Thank you, your message is on its way. We’ll be in touch within one business day.';
             status.className = 'form-status success';
           }
           form.reset();

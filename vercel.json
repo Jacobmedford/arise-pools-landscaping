@@ -59,5 +59,18 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "arisepal.com"
+        }
+      ],
+      "destination": "https://www.arisepal.com/:path*",
+      "permanent": true
+    }
   ]
 }

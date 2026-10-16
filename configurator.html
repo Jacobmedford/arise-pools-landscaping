@@ -1255,6 +1255,10 @@ function selectContactMethod(el) {
 // SUBMIT — validate, calculate, show summary, fire webhook
 // ═══════════════════════════════════════════════════════════════
 
+function escHTML(v) {
+  return String(v == null ? '' : v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
 function submitDream() {
   // Gather contact fields
   state.firstName = document.getElementById('firstName').value.trim();
@@ -1302,19 +1306,36 @@ function submitDream() {
     <div class="summary-row"><span class="summary-label">Lot Size</span><span class="summary-value">${state.lotSize || '—'}</span></div>
     <div class="summary-row"><span class="summary-label">Budget</span><span class="summary-value">${state.budgetRange || '—'}</span></div>
     <div class="summary-row"><span class="summary-label">Timeline</span><span class="summary-value">${state.timeline || '—'}</span></div>
-    <div class="summary-row"><span class="summary-label">Contact</span><span class="summary-value">${state.firstName} ${state.lastName}</span></div>
-    <div class="summary-row"><span class="summary-label">Email</span><span class="summary-value">${state.email}</span></div>
-    <div class="summary-row"><span class="summary-label">Phone</span><span class="summary-value">${state.phone}</span></div>
+    <div class="summary-row"><span class="summary-label">Contact</span><span class="summary-value">${escHTML(state.firstName)} ${escHTML(state.lastName)}</span></div>
+    <div class="summary-row"><span class="summary-label">Email</span><span class="summary-value">${escHTML(state.email)}</span></div>
+    <div class="summary-row"><span class="summary-label">Phone</span><span class="summary-value">${escHTML(state.phone)}</span></div>
   `;
   document.getElementById('summaryDetails').innerHTML = '<h3>Your Selections</h3>' + summaryHTML;
 
-  // Fire webhook (in a real Wix build, this calls the backend .jsw function)
-  fireGHLWebhook(estimate);
-
-  // Show success after a moment
-  setTimeout(() => {
+  // Send the lead (retries once); only claim success once it actually arrived.
+  fireGHLWebhook(estimate).then(ok => {
+    if (!ok) {
+      // Nothing arrived: put them back on the contact step with their answers intact so they can resend.
+      document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+      const step7 = document.getElementById('step7');
+      step7.classList.add('active');
+      let err = document.getElementById('submitError');
+      if (!err) {
+        err = document.createElement('p');
+        err.id = 'submitError';
+        err.setAttribute('role', 'alert');
+        err.style.cssText = 'margin-top:16px;color:#C9573C;font-weight:500;';
+        step7.appendChild(err);
+      }
+      err.innerHTML = 'We could not send your details just now. Please try again, or call us at <a href="tel:+16232923073">(623) 292-3073</a>.';
+      state.currentStep = 7;
+      updateProgress();
+      return;
+    }
+    const err = document.getElementById('submitError');
+    if (err) err.remove();
     document.getElementById('successMessage').style.display = 'block';
-  }, 1500);
+  });
 
   // Update progress to show all complete
   state.currentStep = 8;
@@ -1400,16 +1421,13 @@ function fireGHLWebhook(estimate) {
   // All leads route through n8n, which fans out to the Google Sheet backup
   // and creates the GoHighLevel contact.
   const N8N_WEBHOOK = 'https://jacobmed.app.n8n.cloud/webhook/ariseleadcapture';
-  fetch(N8N_WEBHOOK, {
+  const send = () => fetch(N8N_WEBHOOK, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
-  })
-  .then(res => {
-    if (!res.ok) console.error('Lead webhook error:', res.status);
-    else console.log('Dream Center submission sent to n8n');
-  })
-  .catch(err => console.error('Lead webhook failed:', err));
+    keepalive: true,
+  }).then(res => { if (!res.ok) throw new Error(res.status); return true; });
+  return send().catch(() => send()).catch(err => { console.error('Lead webhook failed:', err); return false; });
 }
 
 

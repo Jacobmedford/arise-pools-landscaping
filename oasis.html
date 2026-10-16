@@ -310,7 +310,9 @@ a { color: inherit; }
   html { scroll-behavior: auto; }
   .o-ch-media { clip-path: none; }
 }
+.o-form-sec { background: linear-gradient(180deg, var(--pool-deep) 0%, var(--night) 28%); }
 </style>
+<link rel="stylesheet" href="/css/lead-survey.css?v=20261016">
 </head>
 <body>
 
@@ -353,28 +355,6 @@ a { color: inherit; }
   </div>
 </div>
 
-<!-- Story -->
-<section class="o-story">
-  <div class="o-story-grid">
-    <div class="rv">
-      <div class="eyebrow">Who we are</div>
-      <h2>Designed outdoors. Built once. <em>Enjoyed forever.</em></h2>
-      <p>For over 15 years, Arise has been building custom pools, landscapes and outdoor living spaces across the Valley. What started as a single pool crew is now a full design and build studio, and the rule hasn't changed: design it right, build it once.</p>
-      <p>We're not a volume builder. We take on a limited number of projects each year, so you get one dedicated team from the first call to the day you jump in.</p>
-      <div class="o-pillars">
-        <div class="o-pillar"><b>Design first</b><span>Every yard starts with a custom 3D design, never a stock template.</span></div>
-        <div class="o-pillar"><b>Built for Arizona</b><span>Engineered for our soil, sun and monsoons to perform for decades.</span></div>
-        <div class="o-pillar"><b>No surprises</b><span>Clear proposals and weekly updates from start to reveal.</span></div>
-        <div class="o-pillar"><b>Here after</b><span>Our relationship keeps going long after the water goes in.</span></div>
-      </div>
-    </div>
-    <div class="o-story-photo rv">
-      <img src="/images/projects/the-modern-escape/the-modern-escape-gold-canyon-az-04-900.jpg" alt="Linear fire table facing a pool and spa with mountain views in Gold Canyon, AZ" loading="lazy">
-      <div class="tag"><b>The Modern Escape</b>Gold Canyon</div>
-    </div>
-  </div>
-</section>
-
 <!-- Chapters -->
 <section class="o-chapters" id="work">
   <div class="o-chapters-head rv">
@@ -385,14 +365,6 @@ a { color: inherit; }
     <p>Tap any photo to walk the whole project. See one you love? Save it and we'll use it as the starting point for your design.</p>
   </div>
   <div id="chapters"></div>
-</section>
-
-<!-- Quick picker -->
-<section class="o-pick">
-  <div class="eyebrow light">Your turn</div>
-  <h2>What are we building in your backyard?</h2>
-  <div class="chips" id="pickChips"></div>
-  <a class="btn btn-gold" href="#start" data-cta="picker">Continue <span class="arrow">&rarr;</span></a>
 </section>
 
 <!-- Reviews -->
@@ -416,23 +388,6 @@ a { color: inherit; }
   </div>
 </section>
 
-<!-- Method -->
-<section class="o-method">
-  <div class="o-method-inner">
-    <div class="eyebrow light">The Arise Method</div>
-    <h2>Seven steps. It starts with a 30-minute call.</h2>
-    <div class="o-steps">
-      <div class="o-step"><b>Discovery Call</b></div>
-      <div class="o-step"><b>Design Consultation</b></div>
-      <div class="o-step"><b>3D Design &amp; Proposal</b></div>
-      <div class="o-step"><b>Material Selection</b></div>
-      <div class="o-step"><b>Permits &amp; Engineering</b></div>
-      <div class="o-step"><b>Construction</b></div>
-      <div class="o-step"><b>Reveal &amp; Care</b></div>
-    </div>
-  </div>
-</section>
-
 <!-- Form -->
 <section class="o-form-sec" id="start">
   <div class="o-moon" aria-hidden="true"></div>
@@ -440,7 +395,7 @@ a { color: inherit; }
     <div class="o-form-copy rv">
       <div class="eyebrow light">Book your design call</div>
       <h2>Thirty minutes with our <em>design manager.</em></h2>
-      <p>Tell us what you're dreaming about. Next, you'll pick a time that works for you. No pressure, no sales script, just a real conversation about your yard.</p>
+      <p>Four quick questions, then you pick a time that works for you. No pressure, no sales script, just a real conversation about your yard.</p>
       <ul class="o-expect">
         <li>Ideas and rough budget ranges for your property</li>
         <li>How HOA approvals and permits work in your city</li>
@@ -448,40 +403,7 @@ a { color: inherit; }
       </ul>
     </div>
 
-    <form class="o-card rv" id="oasisForm" novalidate>
-      <div class="o-progress"><i class="on"></i><i></i><i></i></div>
-
-      <div class="o-pane" data-pane="1">
-        <div class="o-step-label">Step 1 of 2</div>
-        <h3>What's on your wish list?</h3>
-        <p class="hint">Pick everything that applies.</p>
-        <div class="o-tiles" id="tiles"></div>
-        <p class="o-err" id="err1" role="alert"></p>
-        <div class="o-actions">
-          <button type="button" class="btn btn-gold" id="next1">Next <span class="arrow">&rarr;</span></button>
-        </div>
-      </div>
-
-      <div class="o-pane" data-pane="2" hidden>
-        <div class="o-step-label">Step 2 of 2</div>
-        <h3>Where should we send your call details?</h3>
-        <p class="o-picked" id="picked"></p>
-        <div class="o-fields">
-          <div class="o-field"><label for="f_first">First name</label><input id="f_first" name="first_name" autocomplete="given-name" required></div>
-          <div class="o-field"><label for="f_last">Last name</label><input id="f_last" name="last_name" autocomplete="family-name" required></div>
-          <div class="o-field"><label for="f_phone">Phone</label><input id="f_phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
-          <div class="o-field"><label for="f_email">Email</label><input id="f_email" name="email" type="email" autocomplete="email" required></div>
-          <div class="o-field full"><label for="f_notes">Tell us a little about your backyard (optional)</label><textarea id="f_notes" name="vision_notes" placeholder="Lot size, what's there now, must-haves, timing..."></textarea></div>
-          <div class="hp" aria-hidden="true"><label for="f_company">Company</label><input id="f_company" name="company" tabindex="-1" autocomplete="off"></div>
-        </div>
-        <p class="o-err" id="err2" role="alert"></p>
-        <div class="o-actions">
-          <button type="button" class="o-back" id="back2">&larr; Back</button>
-          <button type="submit" class="btn btn-gold" id="submitBtn">Pick My Call Time <span class="arrow">&rarr;</span></button>
-        </div>
-        <p class="o-fine">By submitting, you agree Arise Pools &amp; Landscaping may call, text or email you about your project. Message and data rates may apply. Reply STOP to opt out. See our <a href="/privacy">privacy policy</a>.</p>
-      </div>
-    </form>
+    <div class="lead-survey ls-dark rv" data-source="oasis-funnel" data-tags="Oasis Funnel"></div>
   </div>
 </section>
 
@@ -490,11 +412,6 @@ a { color: inherit; }
   ROC# 342276 (Commercial) &middot; ROC# 342277 (Residential) &middot; Licensed &amp; Bonded<br>
   <a href="/">arisepal.com</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a>
 </footer>
-
-<div class="o-sun" id="sun" aria-hidden="true">
-  <svg viewBox="0 0 96 54"><path d="M4 50 A44 44 0 0 1 92 50" fill="none" stroke="rgba(229,203,154,.45)" stroke-width="1" stroke-dasharray="2 4"/><line x1="0" y1="50" x2="96" y2="50" stroke="rgba(229,203,154,.6)" stroke-width="1"/><circle id="sunDot" cx="4" cy="50" r="6" fill="#E5CB9A"/></svg>
-  <div class="t" id="sunTime">5:40 PM</div>
-</div>
 
 <div class="o-sticky" id="sticky">
   <a class="btn btn-gold" href="#start" data-cta="sticky">Book a Call</a>
@@ -517,22 +434,10 @@ a { color: inherit; }
   </div>
 </div>
 
+<script src="/js/lead-survey.js?v=20261016"></script>
 <script>
 (function () {
   'use strict';
-  // Funnel leads post straight to the GHL inbound webhook (workflow "New website - Engagement").
-  // n8n only keeps the Google Sheet backup; it no longer forwards to GHL.
-  var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/UJDIrAYT4M5omfYGthyJ/webhook-trigger/eea6dd51-7c5a-4039-a711-9dcf2a965dd6';
-  var SHEET_BACKUP = 'https://jacobmed.app.n8n.cloud/webhook/ariseoasis';
-  var ATTR_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'];
-  var attribution = (function () {
-    var qs = new URLSearchParams(location.search), out = {}, saved = {};
-    try { saved = JSON.parse(sessionStorage.getItem('arise_attr') || '{}'); } catch (e) {}
-    ATTR_KEYS.forEach(function (k) { out[k] = qs.get(k) || saved[k] || ''; });
-    try { sessionStorage.setItem('arise_attr', JSON.stringify(out)); } catch (e) {}
-    return out;
-  })();
-
   var P = function (slug, city) { return function (n, w) { return '/images/projects/' + slug + '/' + slug + '-' + city + '-az-' + (n < 10 ? '0' + n : n) + '-' + w + '.jpg'; }; };
   var PROJECTS = [
     { id: 'the-desert-escape', name: 'The Desert Escape', city: 'Superstition Mountains', cat: 'Luxury Outdoor Living', tone: 'day', img: P('the-desert-escape', 'superstition-mountains'),
@@ -552,15 +457,6 @@ a { color: inherit; }
       photos: [[1, 'Pool and spa under string lights at night'], [6, 'Pool and lounge chairs at night'], [2, 'Pool with sheer descents and loungers'], [3, 'Turf lawn with pergola bar and yard games'], [4, 'Spa and pool at sunset'], [5, 'Pool and home at night under the moon'], [7, 'Fire pit in the citrus grove']] }
   ];
 
-  var SERVICES = [
-    { v: 'Pool', img: P('legacy-living', 'san-tan-valley')(6, 900) },
-    { v: 'Landscape', img: P('legacy-living', 'san-tan-valley')(8, 900) },
-    { v: 'Remodel', img: P('the-hidden-jewel', 'gilbert')(2, 900) },
-    { v: 'Outdoor Living', img: P('the-desert-escape', 'superstition-mountains')(5, 900) },
-    { v: 'Fire & Water Features', img: P('the-modern-escape', 'gold-canyon')(2, 900) },
-    { v: 'Hardscape & Sport Courts', img: P('legacy-living', 'san-tan-valley')(1, 900) }
-  ];
-
   var BANDS = [
     'linear-gradient(180deg, #EEE2CF, #E9D3B0)',
     'linear-gradient(180deg, #E9D3B0, #D2AE88)',
@@ -568,7 +464,6 @@ a { color: inherit; }
     'linear-gradient(180deg, #3A2B2E, #1C2631)',
     'linear-gradient(180deg, #1C2631, #0C2736)'
   ];
-  var selected = [];
   var loved = [];
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function track(name, params) { try { gtag('event', name, params || {}); } catch (e) {} }
@@ -682,133 +577,30 @@ a { color: inherit; }
     var b = chWrap.querySelector('[data-love="' + pi + '"]');
     if (b) { b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); b.innerHTML = on ? '&#9829; Saved as inspiration' : '&#9825; Save as my inspiration'; }
     if (on) track('save_inspiration', { project: name });
-    renderPicked();
+    if (window.AriseSurvey) window.AriseSurvey.setInspiration(name, on);
   }
-
-  // ── Selections (picker chips + form tiles share state) ──
-  document.getElementById('pickChips').innerHTML = SERVICES.map(function (s) {
-    return '<button type="button" class="chip" data-svc="' + esc(s.v) + '" aria-pressed="false">' + esc(s.v) + '</button>';
-  }).join('');
-  document.getElementById('tiles').innerHTML = SERVICES.map(function (s) {
-    return '<button type="button" class="o-tile" data-svc="' + esc(s.v) + '" aria-pressed="false"><img src="' + s.img + '" alt="" loading="lazy"><span>' + esc(s.v) + '</span></button>';
-  }).join('');
-  function toggleSvc(v) {
-    var k = selected.indexOf(v);
-    if (k > -1) selected.splice(k, 1); else selected.push(v);
-    document.querySelectorAll('[data-svc]').forEach(function (el) { el.setAttribute('aria-pressed', selected.indexOf(el.getAttribute('data-svc')) > -1); });
-    document.getElementById('err1').textContent = '';
-    renderPicked();
-  }
-  document.addEventListener('click', function (e) { var s = e.target.closest('[data-svc]'); if (s) toggleSvc(s.getAttribute('data-svc')); });
-
-  function renderPicked() {
-    var el = document.getElementById('picked');
-    var bits = [];
-    if (selected.length) bits.push(esc(selected.join(', ')));
-    if (loved.length) bits.push('Inspired by ' + esc(loved.join(', ')));
-    el.innerHTML = bits.length ? '&#10003; ' + bits.join(' &middot; ') + '<button type="button" id="editPick">edit</button>' : '';
-    var ed = document.getElementById('editPick'); if (ed) ed.onclick = function () { showPane(1); };
-  }
-
-  // ── Form steps ──
-  var bars = document.querySelectorAll('.o-progress i');
-  function showPane(n) {
-    document.querySelectorAll('.o-pane').forEach(function (p) { p.hidden = +p.getAttribute('data-pane') !== n; });
-    bars.forEach(function (b, k) { b.classList.toggle('on', k < n); });
-    if (n === 2) { document.getElementById('f_first').focus({ preventScroll: true }); track('form_step_2', { services: selected.join(', ') }); }
-    else { var t1 = document.querySelector('#tiles .o-tile'); if (t1) t1.focus({ preventScroll: true }); }
-  }
-  document.getElementById('next1').onclick = function () {
-    if (!selected.length) { document.getElementById('err1').textContent = 'Pick at least one so we know where to start.'; return; }
-    showPane(2);
-  };
-  document.getElementById('back2').onclick = function () { showPane(1); };
 
   function go(hash) {
-    var t = document.querySelector(hash); if (!t) return;
-    t.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    if (hash === '#start' && selected.length) setTimeout(function () { showPane(2); }, 500);
+    var t = document.querySelector(hash); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
   document.querySelectorAll('a[href="#start"]').forEach(function (a) {
     a.addEventListener('click', function (e) { e.preventDefault(); track('cta_click', { location: a.getAttribute('data-cta') }); go('#start'); });
   });
 
-  var form = document.getElementById('oasisForm');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var err = document.getElementById('err2'); err.textContent = '';
-    var f = { first: document.getElementById('f_first'), last: document.getElementById('f_last'), phone: document.getElementById('f_phone'), email: document.getElementById('f_email') };
-    var digits = f.phone.value.replace(/\D/g, '');
-    var bad = [];
-    if (!f.first.value.trim()) bad.push(f.first);
-    if (!f.last.value.trim()) bad.push(f.last);
-    if (digits.length < 10) bad.push(f.phone);
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.value.trim())) bad.push(f.email);
-    var names = { first: 'first name', last: 'last name', phone: 'a 10-digit phone number', email: 'a valid email' };
-    Object.keys(f).forEach(function (k) { var b = bad.indexOf(f[k]) > -1; f[k].classList.toggle('bad', b); f[k].setAttribute('aria-invalid', b); f[k].setAttribute('aria-describedby', 'err2'); });
-    if (bad.length) { err.textContent = 'Please add your ' + Object.keys(f).filter(function (k) { return bad.indexOf(f[k]) > -1; }).map(function (k) { return names[k]; }).join(', ') + '.'; bad[0].focus(); return; }
-    if (!selected.length) { showPane(1); document.getElementById('err1').textContent = 'Pick at least one so we know where to start.'; return; }
-
-    var notes = document.getElementById('f_notes').value.trim();
-    if (loved.length) notes = 'Inspired by: ' + loved.join(', ') + (notes ? '\n' + notes : '');
-    var utm = ['utm_source', 'utm_medium', 'utm_campaign'].map(function (k) { return attribution[k] ? k + '=' + attribution[k] : ''; }).filter(Boolean).join(' ');
-    var payload = {
-      first_name: f.first.value.trim(),
-      last_name: f.last.value.trim(),
-      email: f.email.value.trim(),
-      phone: f.phone.value.trim(),
-      service_type: selected.join(', '),
-      vision_notes: notes,
-      tags: 'Oasis Funnel' + (utm ? ', ' + utm : ''),
-      source: 'oasis-funnel',
-      submitted_at: new Date().toISOString()
-    };
-    var btn = document.getElementById('submitBtn');
-    btn.disabled = true; btn.textContent = 'Sending...';
-
-    function done() {
-      try { sessionStorage.setItem('arise_first_name', payload.first_name); } catch (x) {}
-      window.location.href = '/book';
-    }
-    if (document.getElementById('f_company').value) { done(); return; }
-    track('generate_lead', { form: 'oasis-funnel', services: payload.service_type });
-    var ghlPayload = Object.assign({}, payload, attribution, {
-      project_description: ['Services: ' + payload.service_type, notes ? 'Notes: ' + notes : ''].filter(Boolean).join('\n'),
-      landing_page: location.origin + location.pathname
-    });
-    var post = function (url, body) { return fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body), keepalive: true }).then(function (r) { if (!r.ok) throw new Error(r.status); return true; }); };
-    var toGhl = post(GHL_WEBHOOK, ghlPayload).catch(function () { return post(GHL_WEBHOOK, ghlPayload); }).then(function () { return true; }, function () { return false; });
-    var toSheet = post(SHEET_BACKUP, payload).then(function () { return true; }, function () { return false; });
-    // The lead counts as captured if it reached GHL or the sheet backup.
-    Promise.all([toGhl, toSheet]).then(function (r) { if (!r[0] && !r[1]) throw new Error('both failed'); }).then(done, function () {
-      btn.disabled = false; btn.innerHTML = 'Pick My Call Time <span class="arrow">&rarr;</span>';
-      err.innerHTML = 'Something went wrong sending that. Please try again or call us at <a href="tel:+16232923073">(623) 292-3073</a>.';
-    });
-  });
-
-  // ── Scroll: reveals, top bar, sticky CTA, golden-hour dial ──
+  // ── Scroll: reveals, top bar, sticky CTA ──
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
   }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.rv, .o-chapter').forEach(function (el) { io.observe(el); });
 
-  var bar = document.getElementById('bar'), sticky = document.getElementById('sticky'), sun = document.getElementById('sun');
-  var dot = document.getElementById('sunDot'), sunTime = document.getElementById('sunTime'), formSec = document.getElementById('start');
+  var bar = document.getElementById('bar'), sticky = document.getElementById('sticky'), formSec = document.getElementById('start');
   var ticking = false;
   function onScroll() {
-    var y = window.scrollY, h = document.documentElement.scrollHeight - innerHeight;
-    var pr = Math.max(0, Math.min(1, y / (h || 1)));
+    var y = window.scrollY;
     bar.classList.toggle('scrolled', y > 40);
     var fr = formSec.getBoundingClientRect();
     var inForm = fr.top < innerHeight * 0.6 && fr.bottom > 0;
     sticky.classList.toggle('show', y > innerHeight * 0.7 && !inForm);
-    sun.classList.toggle('show', y > innerHeight * 0.5);
-    var a = Math.PI * 0.62 * (1 - pr);
-    dot.setAttribute('cx', (48 + 44 * Math.cos(a)).toFixed(1));
-    dot.setAttribute('cy', (50 - 44 * Math.sin(a)).toFixed(1));
-    dot.setAttribute('fill', pr > 0.75 ? '#C9A464' : '#E5CB9A');
-    var mins = 17 * 60 + 40 + Math.round(pr * 105), hh = Math.floor(mins / 60) - 12, mm = mins % 60;
-    sunTime.textContent = hh + ':' + (mm < 10 ? '0' + mm : mm) + ' PM';
     ticking = false;
   }
   window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
