@@ -264,3 +264,13 @@ a.city-badge:hover { transform: translateY(-3px); border-color: var(--gold) !imp
   .gh-band:nth-child(odd) .gh-ch-media { order: 0; }
   .gh-moon { width: 42px; height: 42px; top: 24px; right: 8%; }
 }
+
+/* Footer legal links: readable on the night footer */
+.footer-bottom a { color: rgba(247,241,232,.72); text-decoration: none; border-bottom: 1px solid rgba(229,203,154,.25); transition: color .3s, border-color .3s; }
+.footer-bottom a:hover, .footer-bottom a:focus-visible { color: var(--gold-light, #E5CB9A); border-color: currentColor; }
+
+/* Gallery lightbox: project-page link beside the CTA */
+.pg-acts { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.pg-page { color: rgba(247,241,232,.8); font-family: 'Jost', sans-serif; font-size: .7rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid rgba(229,203,154,.4); padding-bottom: 3px; }
+.pg-page:hover, .pg-page:focus-visible { color: var(--gold-light, #E5CB9A); }
+@media (max-width: 600px) { .pg-acts { width: 100%; justify-content: space-between; } .pg-acts .pg-cta { width: auto; } }

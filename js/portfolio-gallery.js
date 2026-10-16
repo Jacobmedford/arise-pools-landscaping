@@ -38,7 +38,7 @@
     '<div class="pg-top"><div class="pg-title"></div><button class="pg-x" aria-label="Close gallery">&times;</button></div>' +
     '<div class="pg-stage"><button class="pg-nav pg-prev" aria-label="Previous photo">&larr;</button><img alt=""><button class="pg-nav pg-next" aria-label="Next photo">&rarr;</button></div>' +
     '<div class="pg-bottom"><div><span class="pg-count"></span><span class="pg-cap"></span></div>' +
-    '<a class="pg-cta" href="/oasis#start">Design One Like This &rarr;</a></div>' +
+    '<div class="pg-acts"><a class="pg-page" href="/portfolio">The full project story</a><a class="pg-cta" href="/oasis#start">Design One Like This &rarr;</a></div></div>' +
     '<div class="pg-thumbs"></div>';
   document.body.appendChild(lb);
 
@@ -64,6 +64,7 @@
     lastFocus = document.activeElement;
     cur = { p: slug, i: at || 0 };
     lb.querySelector('.pg-title').innerHTML = esc(p.name) + '<small>' + esc(p.city) + '</small>';
+    lb.querySelector('.pg-page').href = '/portfolio/' + slug;
     thumbs.innerHTML = p.photos.map(function (ph, k) {
       return '<button type="button" data-i="' + k + '" aria-label="Photo ' + (k + 1) + '"><img src="' + p.img(ph[0], 900) + '" alt="" loading="lazy"></button>';
     }).join('');
@@ -80,6 +81,11 @@
   lb.querySelector('.pg-prev').onclick = function () { step(-1); };
   lb.querySelector('.pg-next').onclick = function () { step(1); };
   lb.querySelector('.pg-x').onclick = close;
+  // On the main site the CTA opens the survey drawer; on standalone pages it falls back to /oasis.
+  lb.querySelector('.pg-cta').addEventListener('click', function (e) {
+    if (!window.AriseDrawer) return;
+    e.preventDefault(); close(); window.AriseDrawer.open('gallery-' + cur.p);
+  });
   thumbs.addEventListener('click', function (e) { var b = e.target.closest('[data-i]'); if (b) { cur.i = +b.getAttribute('data-i'); show(); } });
   lb.addEventListener('click', function (e) { if (e.target === lb || e.target.classList.contains('pg-stage')) close(); });
   document.addEventListener('keydown', function (e) {
