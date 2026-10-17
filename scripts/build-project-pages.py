@@ -50,7 +50,7 @@ NEARBY = {
     'superstition-mountains': ('in the Superstition Mountains area, east of Mesa', ['mesa', 'queen-creek']),
     'gold-canyon': ('in Gold Canyon, east of Mesa', ['mesa', 'queen-creek']),
 }
-HQ_CITY = 'gilbert'
+HQ_CITY = 'san-tan-valley'
 
 SURVEY_BAND = ('<div class="section gh-night" id="start-project"><div class="gh-moon" aria-hidden="true"></div>'
                '<div class="section-inner"><div class="section-heading"><div class="eyebrow"><div class="eyebrow-line"></div>'
