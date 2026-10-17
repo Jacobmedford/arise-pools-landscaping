@@ -129,7 +129,7 @@
     }
     var s = document.querySelector('script[src*="lead-survey.js"]');
     if (s && !window.AriseSurvey) { s.addEventListener('load', cb); return; }
-    s = document.createElement('script'); s.src = '/js/lead-survey.js?v=20261016'; s.onload = cb; document.body.appendChild(s);
+    s = document.createElement('script'); s.src = '/js/lead-survey.js?v=20261016b'; s.onload = cb; document.body.appendChild(s);
   }
   function buildDrawer() {
     scrim = document.createElement('div'); scrim.className = 'gh-drawer-scrim';
