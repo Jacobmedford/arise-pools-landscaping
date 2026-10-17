@@ -51,7 +51,7 @@ Trigger: a new subfolder appears in Jared's Drive folder `114tsgW_kGn0eckE0TEPxe
    - `focus: neighborhood` -> a neighborhood post for that neighborhood in that city.
    - Feature `featuredProject` by name with 2 to 3 of its photos inline and a link to its gallery.
 2. Neighborhood names are targets, not facts. Any specific claim (HOA rules, lot sizes, build era, amenities) must be verified with agent-reach research first, or left out.
-3. Write per the template rules in the scheduled task (structure, JSON-LD, internal links, Pentair only, phone (623) 292-3073). Link the city page, the featured project's gallery, and `/oasis` as the primary CTA. Zero em-dashes. Run the humanizer pass on the copy.
+3. Write per the template rules in the scheduled task (structure, JSON-LD, internal links, Pentair only, phone (480) 234-8900). Link the city page, the featured project's gallery, and `/oasis` as the primary CTA. Zero em-dashes. Run the humanizer pass on the copy.
 4. Wire it in (blog.html card, category page card, then `python3 scripts/build-sitemap.py`; never hand-edit sitemap.xml), validate, push, verify live 200, then `python3 scripts/indexnow.py <post URL>`.
 5. Only after it is live: `python3 scripts/content-next.py --record POST-SLUG`, then commit and push the updated `data/*.json`.
 

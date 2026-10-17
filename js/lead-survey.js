@@ -206,7 +206,7 @@
       // Captured if it reached GHL or the sheet backup.
       Promise.all([toGhl, toSheet]).then(function (r) { if (!r[0] && !r[1]) throw new Error('both failed'); }).then(done, function () {
         btn.disabled = false; btn.innerHTML = 'Book My Design Call &rarr;';
-        err.innerHTML = 'Something went wrong sending that. Please try again or call us at <a href="tel:+16232923073">(623) 292-3073</a>.';
+        err.innerHTML = 'Something went wrong sending that. Please try again or call us at <a href="tel:+14802348900">(480) 234-8900</a>.';
       });
     });
 

@@ -97,7 +97,7 @@
         })
         .catch(function () {
           if (status) {
-            status.textContent = 'Something went wrong sending your message. Please call us at (623) 292-3073.';
+            status.textContent = 'Something went wrong sending your message. Please call us at (480) 234-8900.';
             status.className = 'form-status error';
           }
         })

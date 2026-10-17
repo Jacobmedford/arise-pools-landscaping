@@ -129,7 +129,7 @@
     }
     var s = document.querySelector('script[src*="lead-survey.js"]');
     if (s && !window.AriseSurvey) { s.addEventListener('load', cb); return; }
-    s = document.createElement('script'); s.src = '/js/lead-survey.js?v=20261016b'; s.onload = cb; document.body.appendChild(s);
+    s = document.createElement('script'); s.src = '/js/lead-survey.js?v=20261017'; s.onload = cb; document.body.appendChild(s);
   }
   function buildDrawer() {
     scrim = document.createElement('div'); scrim.className = 'gh-drawer-scrim';
@@ -141,7 +141,7 @@
         '<div class="eyebrow" style="justify-content:flex-start;margin:0"><div class="eyebrow-line"></div><span class="eyebrow-text">Free 30-minute design call</span></div>' +
         '<h2>Four questions to <em>your backyard.</em></h2></div>' +
       '<div class="gh-drawer-body"><div class="lead-survey" data-source="site-drawer-' + page + '" data-tags="Website Survey, Drawer"></div></div>' +
-      '<div class="gh-drawer-foot">Rather talk now? Call <a href="tel:+16232923073">(623) 292-3073</a></div>';
+      '<div class="gh-drawer-foot">Rather talk now? Call <a href="tel:+14802348900">(480) 234-8900</a></div>';
     drawer.setAttribute('aria-hidden', 'true'); drawer.inert = true;
     document.body.appendChild(scrim); document.body.appendChild(drawer);
     scrim.addEventListener('click', closeDrawer);

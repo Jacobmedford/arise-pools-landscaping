@@ -11,7 +11,7 @@ Check column legend used in every table:
 
 ## 0. Read this first (findings that change the plan)
 
-1. **A BBB profile for "Arise Pools & Landscaping" already exists, and its contact data does not match your NAP.** The BBB page (loaded this session) shows: city San Tan Valley, AZ 85140, phone (480) 234-8900, website arisepal.com, BBB Accredited since 12/21/2022, A+ rating, "Business Started 8/23/2022", "Years in Business 4", a linked Facebook profile (id 100087511008198). Your NAP is Gilbert, AZ 85295 and (623) 292-3073. Two problems: (a) NAP mismatch will split citations and confuse Google; (b) "Years in Business 4" contradicts the "15+ years" on the site (audit item H1). Confirm this BBB record is yours, then fix the address, phone and hours with the local BBB, and reword "15+ years" to what is true for the company (for example "our team has 15+ years of experience" only if accurate). BBB profile: https://www.bbb.org/us/az/san-tan-valley/profile/commercial-landscape-contractors/arise-pools-landscaping-1126-1000105031 (V via reader, S for direct curl).
+1. **A BBB profile for "Arise Pools & Landscaping" already exists, and its contact data does not match your NAP.** The BBB page (loaded this session) shows: city San Tan Valley, AZ 85140, phone (480) 234-8900, website arisepal.com, BBB Accredited since 12/21/2022, A+ rating, "Business Started 8/23/2022", "Years in Business 4", a linked Facebook profile (id 100087511008198). Your NAP is Gilbert, AZ 85295 and (480) 234-8900. Two problems: (a) NAP mismatch will split citations and confuse Google; (b) "Years in Business 4" contradicts the "15+ years" on the site (audit item H1). Confirm this BBB record is yours, then fix the address, phone and hours with the local BBB, and reword "15+ years" to what is true for the company (for example "our team has 15+ years of experience" only if accurate). BBB profile: https://www.bbb.org/us/az/san-tan-valley/profile/commercial-landscape-contractors/arise-pools-landscaping-1126-1000105031 (V via reader, S for direct curl).
 2. **Nothing else turned up for the brand.** Two web searches found no Google Maps, Yelp, Houzz or Instagram page named "Arise Pools & Landscaping" in Arizona. The site itself has zero external links and no `sameAs` (audit M9). Assume you are starting from near zero except BBB and that Facebook profile. Check Google Maps by hand for an auto-created listing before creating a new one (duplicates are a policy problem).
 3. **Time-sensitive: Phoenix Home & Garden Readers' Choice nominations close October 25, 2026.** Page text: "Submit nominations October 1-25. Vote on Finalists November 1-30." Local Arizona businesses only. https://www.phgmag.com/2027-readers-choice-ballot/ (V).
 4. **Time-sensitive: Maricopa County Home & Garden Show, January 15 to 17, 2027, Arizona State Fairgrounds.** Vendor application: https://maricopacountyhomeshows.com/become-a-vendor/ (V). Booth price is not published.
@@ -26,7 +26,7 @@ Check column legend used in every table:
 |---|---|---|
 | Name | Arise Pools & Landscaping | No "LLC" unless it is on your signage (Google rule). No city or keywords in the name. |
 | City, ZIP | Gilbert, AZ 85295 | Street address: decide (Section 1.1). BBB currently says San Tan Valley 85140. |
-| Phone | (623) 292-3073 | Same number on site, GBP, every directory. |
+| Phone | (480) 234-8900 | Same number on site, GBP, every directory. |
 | Email | inquiry@arisepal.com | |
 | Website | https://www.arisepal.com/ | Always `www` (apex domain does not redirect yet, audit H4). |
 | Licenses | ROC# 342276 (Commercial), ROC# 342277 (Residential) | Check the ROC record matches (Section 2). |
@@ -66,7 +66,7 @@ Third-party tools report a cap of 1 primary plus 9 additional. Google's own page
   > Arise Pools & Landscaping is a licensed design-build company in Gilbert, Arizona. We design and build custom pools, pool remodels, landscapes, outdoor kitchens, hardscape, sport courts, and water and fire features for homeowners across the Phoenix East Valley, including Gilbert, Chandler, Mesa, Scottsdale, Queen Creek, and San Tan Valley. One team handles design, permits, construction, and Pentair pool automation, and we offer pool and landscape maintenance after the build. We hold Arizona ROC licenses 342276 (commercial) and 342277 (residential). Book a design call to talk through your lot, your HOA requirements, and your budget.
 - **Opening date:** Google can show years in business. Use the true company date (BBB says 8/23/2022; confirm). Do not write "15 years" in the description unless it is true of the company.
 - **Website link:** `https://www.arisepal.com/` (optionally add `?utm_source=google&utm_medium=organic&utm_campaign=gbp` to separate GBP traffic in GA4). **Appointment link:** `https://www.arisepal.com/book`.
-- **Phone:** (623) 292-3073 as primary.
+- **Phone:** (480) 234-8900 as primary.
 - **Hours:** Google says businesses that operate only by appointment should not list hours. Settle audit item M8 first, then mirror the website.
 - **Service areas (max 20, by city or ZIP, not radius; should stay within about 2 hours' drive):** Gilbert, Chandler, Mesa, Scottsdale, Queen Creek, San Tan Valley, Phoenix, Tempe, Paradise Valley, Fountain Hills, Cave Creek. Optional if you really go there: Gold Canyon (two portfolio projects), Apache Junction, Carefree.
 
