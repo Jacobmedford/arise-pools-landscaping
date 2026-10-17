@@ -71,6 +71,11 @@
       ],
       "destination": "https://www.arisepal.com/:path*",
       "permanent": true
+    },
+    {
+      "source": "/portfolio-collections/:path*",
+      "destination": "/portfolio",
+      "permanent": true
     }
   ]
 }
