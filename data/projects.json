@@ -438,7 +438,47 @@
         }
       ],
       "cover": 7,
-      "featuredInPosts": []
+      "featuredInPosts": [],
+      "story": [
+        "The Desert Escape sits on a desert lot below the Superstition Mountains, and the whole backyard is organized around that view. The pool runs long and straight off the back of the house, lined up with the Superstition skyline, and everything else on the property is placed to keep that sight line open.",
+        "Travertine ties the yard together. The same warm, multi-tone stone, laid in a mixed-size pattern, covers the pool deck, the long patio along the house, the gate steps and the kitchen counters, so the hardscape reads as one surface from the back door to the perimeter wall. Stacked stone does the vertical work: it wraps the raised wall along the pool, the outdoor kitchen and the pillars of the perimeter fence.",
+        "Three bronze scuppers pour from that raised wall into the pool, and the wall is capped in travertine so it doubles as a ledge. At one end, a tanning ledge edged in a band of mosaic tile gives loungers a shallow place to sit in the water. After dark, the pool lights and the lit caps on the stone pillars take over from the sunset.",
+        "The covered patio is where the house opens up. Under a wood-plank ceiling with a ceiling fan and recessed lights there is a wicker lounge set on a rug and a hot tub tucked into the corner, a few steps from the pool. Beside it, the outdoor kitchen is built into stacked stone with a stainless grill, stainless doors and drawers, a pizza oven on the counter and bar seating beside the pool.",
+        "Past the wall, the landscape stays desert. Rock-lined dry washes, gravel paths and boulders run between saguaros, prickly pear and round-clipped shrubs, and an iron gate between lit stone pillars opens onto travertine steps that lead out into it. The front yard carries the same palette along the curved driveway, so the property reads as one piece from the street."
+      ],
+      "features": [
+        {
+          "title": "Aligned With the Skyline",
+          "text": "The pool runs on a straight line toward the Superstition Mountains, so the view is framed from the deck, the patio and the water."
+        },
+        {
+          "title": "Three Bronze Scuppers",
+          "text": "Water pours from a raised stacked-stone wall capped in travertine, bringing sound and movement to the long side of the pool."
+        },
+        {
+          "title": "Tanning Ledge",
+          "text": "A shallow ledge edged in mosaic tile holds loungers in the water and glows from the pool lights at dusk."
+        },
+        {
+          "title": "Stacked-Stone Kitchen",
+          "text": "Grill, stainless storage, a pizza oven and bar seating, built into stacked stone with travertine counters."
+        },
+        {
+          "title": "One Travertine Surface",
+          "text": "Deck, patio, steps and counters share the same stone, so the yard feels like a single space."
+        },
+        {
+          "title": "Desert at the Edges",
+          "text": "Stone pillars and iron panels keep the views open while washes, gravel paths and saguaros carry the landscape out to the property line."
+        }
+      ],
+      "services": [
+        "custom-pools",
+        "water-fire-features",
+        "outdoor-living",
+        "hardscape",
+        "landscape-design"
+      ]
     },
     {
       "slug": "legacy-living",
@@ -919,6 +959,46 @@
       "featuredInPosts": [
         "custom-pool-builder-san-tan-valley-az",
         "pool-builder-johnson-ranch-san-tan-valley-az"
+      ],
+      "story": [
+        "Legacy Living uses every part of its San Tan Valley lot. The main house and a separate pool house face each other across a central courtyard, and the pool sits between them, so both buildings open straight onto the water. From there the yard steps out into zones: a lounge terrace, fire pit seating, a putting green and a lit pickleball court.",
+        "The pool has clean straight edges on one side and a soft curve on the other, with a sun shelf facing the pool house. A raised spa at one corner, wrapped in stacked stone, sheets over stepped blue glass tile into the pool. Stacked-stone pillars along the edge carry water features aimed at the pool house, and a deep blue tile line traces the waterline.",
+        "Travertine pavers cover the courtyard. In places they open into a grid with turf ribbons between the stones, which softens a large deck and draws a path from the covered patio to the water. Near the palms, the same pavers float in gravel instead. Palms frame the pool and are uplit after dark, and gravel beds hold agaves, lantana and bird of paradise.",
+        "The play spaces sit around the edges. A putting green with flags runs between the lounge deck and the pool house. Fire pit seating sits on the terrace among the turf and pavers. Down a run of lit travertine steps between block walls, set below the pool terrace, is a pickleball court under light poles, with fencing and a basketball hoop. Along the back wall, a slatted metal privacy screen rises behind a row of loungers.",
+        "The front gets the same attention: a curved paver drive loops around a flagpole circle through desert plantings to a paver entry walk."
+      ],
+      "features": [
+        {
+          "title": "Pool Between Two Buildings",
+          "text": "The main house and the pool house both open onto the water, so the courtyard works as one big outdoor room."
+        },
+        {
+          "title": "Raised Spa Spillover",
+          "text": "A raised spa wrapped in stacked stone sheets over stepped blue glass tile into the pool."
+        },
+        {
+          "title": "Turf Ribbons",
+          "text": "Travertine pavers set in a grid with turf between them soften the deck and lead the eye to the pool."
+        },
+        {
+          "title": "Lit Pickleball Court",
+          "text": "A court with light poles, fencing and a basketball hoop, reached by lit travertine steps from the pool terrace."
+        },
+        {
+          "title": "Putting Green",
+          "text": "A turf putting green with flags sits between the lounge deck and the pool house."
+        },
+        {
+          "title": "Built for After Dark",
+          "text": "Pool lights, uplit palms, step lights and court lights keep the whole lot usable after sunset."
+        }
+      ],
+      "services": [
+        "custom-pools",
+        "water-fire-features",
+        "hardscape",
+        "landscape-design",
+        "outdoor-living"
       ]
     },
     {
@@ -1229,6 +1309,47 @@
       "cover": 2,
       "featuredInPosts": [
         "custom-pool-builder-in-gilbert-az"
+      ],
+      "story": [
+        "The Hidden Jewel is a remodel in Gilbert, built for evenings at home. Block walls and neighboring rooflines surround the backyard, so the design turns inward: a freeform pool with light built into its stone, a covered bar with its own TV, and a fire pit lounge, all within a few steps of the back door.",
+        "The pool curves in and out like a lagoon. In a shallow lounge area, a round table finished in blue glass mosaic stands right in the water. A raised spa clad in the same mosaic tile spills into the pool, and a curved wall of white stacked stone along the back sends sheer descents into the water. A band of patterned tile runs along the waterline.",
+        "Lighting is what earns the name. Linear lights sit under the coping of the stone wall, the raised spa and the curved step-down benches, so at dusk the edges glow and every step is easy to read. Pool lights, path lights and uplit palms and bougainvillea along the back wall finish the scene.",
+        "The covered bar is its own structure, with a dark slatted ceiling, recessed lights and a ceiling fan. Upholstered stools pull up to a long bar counter facing the pool, a wall-mounted TV hangs on a slatted accent wall, and a built-in stainless grill and side burner sit under the same roof. A decorative metal screen fills one opening and frames the vines on the wall behind it.",
+        "Across the travertine deck, a square fire pit with low lounge chairs sits beside the lit pool steps, and a turf lawn with stepping pavers curves along the house. A daybed lounger under a cantilever umbrella sits next to the spa.",
+        "The front yard was refreshed to match: turf with stepping pavers to the entry gate, a raised planter with an olive tree, and a courtyard laid in a paver and turf grid with seating and a bowl fountain."
+      ],
+      "features": [
+        {
+          "title": "Freeform Lagoon",
+          "text": "Curves, a shallow lounge area and a mosaic table set in the water give the pool a resort feel."
+        },
+        {
+          "title": "Glowing Edges",
+          "text": "Linear lighting under the coping of the stone wall, the spa and the step-down benches outlines the pool after dark."
+        },
+        {
+          "title": "Mosaic Spa Spillover",
+          "text": "A raised spa wrapped in blue glass mosaic tile sheets water into the pool."
+        },
+        {
+          "title": "Covered Bar and Grill",
+          "text": "A separate covered structure with bar seating, a wall-mounted TV, a built-in grill and a side burner."
+        },
+        {
+          "title": "Fire Pit Lounge",
+          "text": "A square fire pit and lounge chairs sit on the travertine deck between the pool steps and the lawn."
+        },
+        {
+          "title": "Front Yard Refresh",
+          "text": "Turf, stepping pavers, a raised planter and a paver and turf courtyard carry the new look to the street."
+        }
+      ],
+      "services": [
+        "pool-remodels",
+        "water-fire-features",
+        "outdoor-living",
+        "landscape-design",
+        "hardscape"
       ]
     },
     {
@@ -1280,7 +1401,47 @@
         }
       ],
       "cover": 1,
-      "featuredInPosts": []
+      "featuredInPosts": [],
+      "story": [
+        "The Modern Escape is a contemporary backyard in Gold Canyon, with the mountains above town filling the view past the back wall. The house is flat planes, dark stacked-stone columns and big glass, and the yard follows the same rules: straight lines, a short list of materials and a layout you can read in one glance from the patio.",
+        "The pool is a clean rectangle with a deep blue finish. Along one side, a sun shelf holds a pair of sculptural in-water loungers with a small table between them, so you can lie half in the water and watch the sky change. A raised spa sits at the corner closest to the house.",
+        "Fire is the other half of the design. Under the covered patio, a long linear fire table clad in stacked stone sits in front of a deep sectional, lined up with the pool so the flames and the water share the same view. Stacked stone also wraps the built-in grill station at the corner of the patio, matching the stone columns of the house, so the new work and the architecture look like they were built together.",
+        "Pale stone pavers cover the deck and the patio, and a band of turf wraps the outer edge of the deck, with stepping pavers set into it along the side yard. Low walls topped with iron view fencing keep the backyard open to the desert and the mountains beyond.",
+        "At night the light stays low and warm: recessed lights in the patio ceiling, pool lights and landscape lights washing the back wall and its plantings. Out front, uplit cactus line a paver driveway through boulders and desert plantings, and a stone-columned entry courtyard leads to the door through an iron gate."
+      ],
+      "features": [
+        {
+          "title": "In-Water Loungers",
+          "text": "A sun shelf with two sculptural loungers and a side table puts you in the water with the mountains ahead."
+        },
+        {
+          "title": "Linear Fire Table",
+          "text": "A long fire table clad in stacked stone anchors the covered patio and lines up with the pool."
+        },
+        {
+          "title": "Stone That Matches",
+          "text": "The grill station and fire table use stacked stone that matches the house columns, so new work and architecture agree."
+        },
+        {
+          "title": "Raised Corner Spa",
+          "text": "A raised spa at the corner near the house keeps hot water a few steps from the patio."
+        },
+        {
+          "title": "Turf Frame",
+          "text": "A band of turf with stepping pavers wraps the stone deck and softens its edges."
+        },
+        {
+          "title": "Lit Desert Drive",
+          "text": "Uplit cactus and boulders line the paver driveway to a stone and iron entry courtyard."
+        }
+      ],
+      "services": [
+        "custom-pools",
+        "water-fire-features",
+        "outdoor-living",
+        "hardscape",
+        "landscape-design"
+      ]
     },
     {
       "slug": "family-focused",
@@ -1333,6 +1494,46 @@
       "cover": 1,
       "featuredInPosts": [
         "custom-pool-builder-power-ranch-gilbert-az"
+      ],
+      "story": [
+        "Family Focused is a Gilbert backyard built for time together. The pool and spa sit at the center, a turf lawn opens up beside them for yard games, and pergolas, string lights and a fire pit tucked into the citrus give the yard several places to gather, from the water to the bar to the fire.",
+        "The pool has a long straight run with a raised stacked-stone wall along one side, where sheer descents pour into the water. At one end, a sun shelf holds chaise loungers in the shallow water under blue umbrellas. A round raised spa, wrapped in stacked stone and capped in travertine, sits at the edge nearest the house.",
+        "White pergolas frame the deck. One covers a bar built in stacked stone with stools along the counter, right beside the lawn. Another shades a seating area on the far side of the pool, and tall posts strung with lights run along the back of the yard, so the whole space glows at night.",
+        "Travertine covers the deck from the house to the back wall, and the turf lawn sits right next to it, with room for cornhole and open play. Potted succulents mark the corners of the pool, and palms rise behind the sheer wall.",
+        "In the back corner, a round fire pit wrapped in stacked stone with a travertine cap sits on its own patio, framed by white benches and a row of citrus trees. Under the string lights and the moon, it is the last stop of the night."
+      ],
+      "features": [
+        {
+          "title": "Sheer Descent Wall",
+          "text": "A raised stacked-stone wall runs along the pool and pours sheer descents into the water."
+        },
+        {
+          "title": "Sun Shelf Loungers",
+          "text": "Chaise loungers sit in the shallow water under blue umbrellas at one end of the pool."
+        },
+        {
+          "title": "Raised Round Spa",
+          "text": "A round spa wrapped in stacked stone and capped in travertine sits close to the house."
+        },
+        {
+          "title": "Pergola Bar",
+          "text": "A white pergola covers a stacked-stone bar with stools beside the turf lawn."
+        },
+        {
+          "title": "Turf for Yard Games",
+          "text": "A turf lawn next to the deck leaves room for cornhole and open play."
+        },
+        {
+          "title": "Fire Pit in the Citrus",
+          "text": "A stacked-stone fire pit with a travertine cap, benches and string lights, set in front of the citrus trees."
+        }
+      ],
+      "services": [
+        "custom-pools",
+        "water-fire-features",
+        "outdoor-living",
+        "landscape-design",
+        "hardscape"
       ]
     },
     {

@@ -1,0 +1,121 @@
+/* ═══════════════════════════════════════════════════════
+   ARISE POOLS: GOLDEN HOUR CITY PAGES
+   Loads after site.css, arise-v2.css and lead-survey.css on
+   /cities/*. Pages run cream to sand to a dusk project band,
+   then a dark FAQ and the night survey, same as the homepage.
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Hero ── */
+.gh-city-hero .eyebrow-text { color: var(--gold-light); }
+.gh-city-hero .page-hero-content { padding-bottom: clamp(56px, 9vh, 104px); }
+.gh-city-hero h1 { max-width: none; font-size: clamp(2.3rem, 6vw, 5rem); }
+.gh-hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+.gh-hero-facts { list-style: none; display: flex; flex-wrap: wrap; gap: 18px clamp(28px, 5vw, 60px); margin: clamp(30px, 5vh, 52px) 0 0; padding: 22px 0 0; border-top: 1px solid rgba(247,241,232,.2); max-width: 820px; }
+.gh-hero-facts li { min-width: 150px; }
+.gh-hero-facts b { display: block; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(1.3rem, 2.3vw, 1.75rem); line-height: 1.1; color: var(--gold-light); }
+.gh-hero-facts span { display: block; margin-top: 6px; font-size: .64rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(247,241,232,.72); }
+.gh-hero-cap { position: absolute; z-index: 2; right: clamp(16px, 3vw, 40px); bottom: 32px; margin: 0; writing-mode: vertical-rl; transform: rotate(180deg); font-size: .62rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(247,241,232,.62); }
+
+/* ── Intro: editorial prose plus a ledger card ── */
+.gh-intro { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(36px, 6vw, 88px); align-items: start; }
+.section-heading.gh-left { text-align: left; margin-bottom: 30px; }
+.section-heading.gh-left .eyebrow { justify-content: flex-start; }
+.section-heading.gh-left .eyebrow .eyebrow-line:last-child { display: none; }
+.section-heading.gh-left .gold-rule { margin-left: 0; }
+.gh-prose > p { color: rgba(26,24,20,.76); font-size: 1.03rem; line-height: 1.85; margin: 0 0 20px; }
+.gh-prose > p:first-of-type::first-letter { font-family: 'Cormorant Garamond', serif; float: left; font-size: 4.1rem; line-height: .82; padding: 6px 10px 0 0; color: var(--gold-dark); }
+.gh-prose a, .gh-note a, .gh-hood a { color: var(--gold-dark); text-decoration: underline; text-decoration-color: rgba(139,105,20,.35); text-underline-offset: 3px; transition: text-decoration-color .3s; }
+.gh-prose a:hover, .gh-note a:hover, .gh-hood a:hover { text-decoration-color: var(--gold-dark); }
+.gh-ledger { position: sticky; top: 92px; background: #fff; border-radius: 3px; border-top: 2px solid var(--gold); padding: 30px 30px 26px; box-shadow: 0 1px 0 rgba(26,24,20,.06), 0 30px 60px -40px rgba(26,24,20,.5); }
+.gh-ledger h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.75rem; line-height: 1.1; color: var(--stone); margin: 0 0 6px; }
+.gh-ledger dl { margin: 0; }
+.gh-ledger dt { padding-top: 16px; font-size: .62rem; font-weight: 500; letter-spacing: .24em; text-transform: uppercase; color: var(--gold-dark); }
+.gh-ledger dd { margin: 5px 0 0; padding-bottom: 16px; border-bottom: 1px solid rgba(26,24,20,.08); font-size: .95rem; line-height: 1.55; color: rgba(26,24,20,.8); }
+.gh-ledger dd:last-of-type { border-bottom: 0; }
+.gh-ledger .btn-gold { display: block; text-align: center; margin-top: 18px; }
+.gh-ledger-note { margin: 14px 0 0; font-size: .8rem; line-height: 1.5; color: var(--mist); text-align: center; }
+.gh-ledger-note a { color: var(--gold-dark); }
+
+/* ── Design notes ── */
+.gh-notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 2.6vw, 34px); }
+.gh-note { position: relative; padding: 34px 30px 32px; background: rgba(255,255,255,.6); border: 1px solid rgba(201,164,100,.3); border-radius: 3px; transition: transform .5s var(--ease), box-shadow .5s var(--ease), background .5s; }
+.gh-note:hover { transform: translateY(-4px); background: #fff; box-shadow: 0 30px 60px -42px rgba(26,24,20,.55); }
+.gh-note-num { display: block; margin-bottom: 18px; font-family: 'Cormorant Garamond', serif; font-size: 3.6rem; line-height: .8; color: transparent; -webkit-text-stroke: 1px var(--gold); }
+.gh-note h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.6rem; line-height: 1.15; color: var(--stone); margin: 0 0 12px; }
+.gh-note p { margin: 0; font-size: .96rem; line-height: 1.75; color: rgba(26,24,20,.74); }
+
+/* ── Neighborhoods ── */
+.gh-hoods { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 34px clamp(24px, 3vw, 44px); }
+.gh-hood { border-top: 1px solid rgba(201,164,100,.5); padding-top: 22px; }
+.gh-hood h3 { display: flex; align-items: center; gap: 12px; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.55rem; line-height: 1.15; color: var(--stone); margin: 0 0 10px; }
+.gh-hood h3::before { content: ""; flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(201,164,100,.18); }
+.gh-hood p { margin: 0; font-size: .95rem; line-height: 1.72; color: rgba(26,24,20,.72); }
+
+/* ── Services on city pages: three cards ── */
+.gh-services { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.gh-services .service-card p { font-size: .95rem; line-height: 1.7; color: rgba(26,24,20,.66); }
+.gh-services .service-card-img { aspect-ratio: 3 / 2; height: auto; object-fit: cover; }
+
+/* ── Short method: four steps ── */
+.gh-steps4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+/* ── Project band: daylight that sinks into dusk ── */
+.gh-chapters .gh-band.gh-day { background: linear-gradient(180deg, #EEE2CF, #E2C9A2); }
+.gh-chapters .gh-band.gh-fall { --fall: 250px; background: linear-gradient(180deg, #EEE2CF 0, #E2C9A2 calc(100% - var(--fall)), #8A6450 calc(100% - var(--fall) * .6), #3A2B2E calc(100% - var(--fall) * .28), #0C2736 100%); padding-bottom: var(--fall); }
+.gh-chapters .gh-band.gh-day + .gh-band.gh-fall { background: linear-gradient(180deg, #E2C9A2 0, #E2C9A2 calc(100% - var(--fall)), #8A6450 calc(100% - var(--fall) * .6), #3A2B2E calc(100% - var(--fall) * .28), #0C2736 100%); }
+.gh-ch-links { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: baseline; margin-top: 22px; }
+.gh-ch-links .gh-ch-link { margin-top: 0; }
+
+/* ── FAQ on the dark band ── */
+.gh-dark .section-heading .subtitle { color: rgba(247,241,232,.72); }
+.gh-faq { max-width: 900px; margin: 0 auto; }
+.gh-faq details { border-top: 1px solid rgba(229,203,154,.22); }
+.gh-faq details:last-child { border-bottom: 1px solid rgba(229,203,154,.22); }
+.gh-faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 24px 4px; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(1.28rem, 2.2vw, 1.62rem); line-height: 1.25; color: var(--cream); transition: color .3s; }
+.gh-faq summary::-webkit-details-marker { display: none; }
+.gh-faq summary::after { content: "+"; flex: none; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 1.6rem; line-height: 1; color: var(--gold-light); transition: transform .4s var(--ease); }
+.gh-faq details[open] summary::after { transform: rotate(45deg); }
+.gh-faq summary:hover { color: var(--gold-light); }
+.gh-faq summary:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 4px; }
+.gh-faq details p { margin: 0; padding: 0 4px 26px; max-width: 46rem; font-size: .99rem; line-height: 1.8; color: rgba(247,241,232,.8); }
+.gh-faq details p a { color: var(--gold-light); text-underline-offset: 3px; }
+
+/* ── Nearby cities ── */
+.gh-near-wrap { margin-top: clamp(70px, 9vw, 120px); }
+.gh-near-wrap .section-heading { margin-bottom: 34px; }
+.gh-near-wrap .section-heading h2 { font-size: clamp(1.9rem, 3.4vw, 2.8rem); }
+.gh-near { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; max-width: 1040px; margin: 0 auto; }
+a.gh-near-card { display: block; text-decoration: none; padding: 22px 22px 20px; border: 1px solid rgba(229,203,154,.25); border-radius: 3px; background: rgba(7,24,33,.35); color: var(--cream); transition: transform .4s var(--ease), border-color .4s, background .4s; }
+a.gh-near-card:hover { transform: translateY(-3px); border-color: var(--gold-light); background: rgba(7,24,33,.6); }
+a.gh-near-card b { display: block; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.55rem; line-height: 1.1; }
+a.gh-near-card span { display: block; margin-top: 8px; font-size: .64rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-light); }
+a.gh-near-card span::after { content: " \2192"; }
+
+/* ── Responsive ── */
+@media (max-width: 1080px) {
+  .gh-steps4 { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 56px; }
+  .gh-services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 960px) {
+  .gh-intro { grid-template-columns: 1fr; }
+  .gh-ledger { position: static; }
+  .gh-notes { grid-template-columns: 1fr; }
+  .gh-chapters .gh-band.gh-fall { --fall: 210px; }
+}
+@media (max-width: 720px) {
+  .gh-services { grid-template-columns: 1fr; }
+  .gh-steps4 { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .gh-hero-ctas a { flex: 1 1 100%; text-align: center; }
+  .gh-hero-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; }
+  .gh-hero-facts li { min-width: 0; }
+  .gh-hero-facts li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .gh-hero-cap { writing-mode: horizontal-tb; transform: none; right: auto; left: 20px; bottom: 16px; font-size: .56rem; }
+  .gh-city-hero .page-hero-content { padding-bottom: 56px; }
+  .gh-city-hero h1 { font-size: 2.3rem; }
+  .gh-prose > p:first-of-type::first-letter { font-size: 3.4rem; }
+  .gh-ledger { padding: 26px 22px 22px; }
+  .gh-note { padding: 28px 22px 26px; }
+  .gh-faq summary { padding: 20px 2px; }
+}
