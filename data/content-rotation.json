@@ -122,12 +122,12 @@
     }
   ],
   "state": {
-    "nextFocus": "neighborhood",
-    "nextCityIndex": 2,
+    "nextFocus": "city",
+    "nextCityIndex": 3,
     "neighborhoodCursor": {
       "gilbert": 1,
       "san-tan-valley": 1,
-      "queen-creek": 0,
+      "queen-creek": 1,
       "mesa": 0,
       "chandler": 0,
       "scottsdale": 0,
@@ -178,6 +178,14 @@
       "city": "Queen Creek",
       "neighborhood": null,
       "featuredProject": "the-desert-escape"
+    },
+    {
+      "date": "2026-10-19",
+      "post": "modern-pool-design-queen-creek-station-az",
+      "focus": "neighborhood",
+      "city": "Queen Creek",
+      "neighborhood": "Queen Creek Station",
+      "featuredProject": "the-modern-escape"
     }
   ]
 }
