@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
 Sitemap: https://www.arisepal.com/sitemap.xml
+Sitemap: https://www.arisepal.com/sitemap-blog.xml
+Sitemap: https://www.arisepal.com/sitemap-funnels.xml

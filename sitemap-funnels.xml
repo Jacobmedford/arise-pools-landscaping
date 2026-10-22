@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.arisepal.com/configurator</loc>
+    <lastmod>2026-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.arisepal.com/contact</loc>
+    <lastmod>2026-10-16</lastmod>
+    <image:image><image:loc>https://www.arisepal.com/images/projects/the-hidden-jewel/the-hidden-jewel-gilbert-az-02-1800.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.arisepal.com/guide</loc>
+    <lastmod>2026-10-16</lastmod>
+    <image:image><image:loc>https://www.arisepal.com/images/projects/legacy-living/legacy-living-san-tan-valley-az-03-1800.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.arisepal.com/oasis</loc>
+    <lastmod>2026-10-16</lastmod>
+    <image:image><image:loc>https://www.arisepal.com/images/projects/the-desert-escape/the-desert-escape-superstition-mountains-az-07-1800.jpg</image:loc></image:image>
+  </url>
+</urlset>

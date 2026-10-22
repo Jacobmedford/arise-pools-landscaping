@@ -6,6 +6,8 @@
 - <lastmod> = last git commit date of the file, or today if it has uncommitted changes.
 - Image sitemap entries for every project photo and inline image on the page, so Google Images
   can index the galleries.
+- Also writes section sitemaps (sitemap-blog.xml, sitemap-funnels.xml) so Search Console can
+  report indexing for the blog and the lead funnels on their own. sitemap.xml stays the full list.
 
 Usage: python3 scripts/build-sitemap.py [--check]   (--check = print the summary, write nothing)
 Run it after adding or changing pages (the blog routine runs it after each new post).
@@ -21,6 +23,11 @@ SKIP_DIRS = {'node_modules', 'qa', 'scripts', 'ops', 'data', 'preview-assets', '
 SKIP_FILES = {'Arise-Dream-Center-Configurator.html', 'Arise-Pools-Visual-Preview.html', '_home-body.html'}
 IMG_RE = re.compile(r'''(?:src=|url\(\s*['"]?)["']?(/images[^"')\s]+\.(?:jpe?g|png|webp))''', re.I)
 TODAY = datetime.date.today().isoformat()
+FUNNELS = {'/oasis', '/configurator', '/guide', '/contact'}
+SECTIONS = {
+    'sitemap-blog.xml': lambda path: path == '/blog' or path.startswith('/blog/'),
+    'sitemap-funnels.xml': lambda path: path in FUNNELS,
+}
 
 
 def git_date(rel):
@@ -67,23 +74,32 @@ def main():
         entries.append((url, git_date(rel), imgs[:1000]))
     entries.sort(key=lambda e: (e[0] != SITE + '/', e[0]))
 
-    lines = ['<?xml version="1.0" encoding="UTF-8"?>',
-             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']
-    for url, lastmod, imgs in entries:
-        lines.append('  <url>')
-        lines.append('    <loc>%s</loc>' % escape(url))
-        lines.append('    <lastmod>%s</lastmod>' % lastmod)
-        for u in imgs:
-            lines.append('    <image:image><image:loc>%s</image:loc></image:image>' % escape(u))
-        lines.append('  </url>')
-    lines.append('</urlset>')
+    def render(rows):
+        lines = ['<?xml version="1.0" encoding="UTF-8"?>',
+                 '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">']
+        for url, lastmod, imgs in rows:
+            lines.append('  <url>')
+            lines.append('    <loc>%s</loc>' % escape(url))
+            lines.append('    <lastmod>%s</lastmod>' % lastmod)
+            for u in imgs:
+                lines.append('    <image:image><image:loc>%s</image:loc></image:image>' % escape(u))
+            lines.append('  </url>')
+        lines.append('</urlset>')
+        return '\n'.join(lines) + '\n'
+    lines = render(entries)
+    section_rows = {name: [e for e in entries if test(e[0][len(SITE):] or '/')] for name, test in SECTIONS.items()}
 
     print('%d urls, %d images, %d skipped' % (len(entries), sum(len(e[2]) for e in entries), len(skipped)))
     for rel, why in skipped:
         print('  skip %s (%s)' % (rel, why))
+    for name, rows in section_rows.items():
+        print('  %s: %d urls' % (name, len(rows)))
     if '--check' not in sys.argv:
-        open(OUT, 'w', encoding='utf-8').write('\n'.join(lines) + '\n')
+        open(OUT, 'w', encoding='utf-8').write(lines)
         print('wrote', os.path.relpath(OUT, ROOT))
+        for name, rows in section_rows.items():
+            open(os.path.join(ROOT, name), 'w', encoding='utf-8').write(render(rows))
+            print('wrote', name)
 
 
 if __name__ == '__main__':
