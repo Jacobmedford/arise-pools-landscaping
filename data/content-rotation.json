@@ -122,13 +122,13 @@
     }
   ],
   "state": {
-    "nextFocus": "neighborhood",
-    "nextCityIndex": 3,
+    "nextFocus": "city",
+    "nextCityIndex": 4,
     "neighborhoodCursor": {
       "gilbert": 1,
       "san-tan-valley": 1,
       "queen-creek": 1,
-      "mesa": 0,
+      "mesa": 1,
       "chandler": 0,
       "scottsdale": 0,
       "paradise-valley": 0,
@@ -194,6 +194,14 @@
       "city": "Mesa",
       "neighborhood": null,
       "featuredProject": "the-desert-escape"
+    },
+    {
+      "date": "2026-10-22",
+      "post": "pool-planning-eastmark-mesa-az",
+      "focus": "neighborhood",
+      "city": "Mesa",
+      "neighborhood": "Eastmark",
+      "featuredProject": "the-hidden-jewel"
     }
   ]
 }
