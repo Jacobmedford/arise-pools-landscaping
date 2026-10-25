@@ -122,14 +122,14 @@
     }
   ],
   "state": {
-    "nextFocus": "neighborhood",
-    "nextCityIndex": 4,
+    "nextFocus": "city",
+    "nextCityIndex": 5,
     "neighborhoodCursor": {
       "gilbert": 1,
       "san-tan-valley": 1,
       "queen-creek": 1,
       "mesa": 1,
-      "chandler": 0,
+      "chandler": 1,
       "scottsdale": 0,
       "paradise-valley": 0,
       "phoenix": 0,
@@ -210,6 +210,14 @@
       "city": "Chandler",
       "neighborhood": null,
       "featuredProject": "the-modern-escape"
+    },
+    {
+      "date": "2026-10-25",
+      "post": "pool-builder-ocotillo-chandler-az",
+      "focus": "neighborhood",
+      "city": "Chandler",
+      "neighborhood": "Ocotillo",
+      "featuredProject": "family-focused"
     }
   ]
 }
