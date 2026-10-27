@@ -47,6 +47,23 @@
   //     Google Sheet backup and creates the GoHighLevel contact. ───
   var N8N_WEBHOOK = 'https://jacobmed.app.n8n.cloud/webhook/ariseleadcapture';
 
+  // ─── Marketing attribution: same rule and sessionStorage key as lead-survey.js.
+  //     Captured on every page load so UTMs from any landing page reach the form. ───
+  var ATTR_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'];
+  var attribution = (function () {
+    var out = {};
+    ATTR_KEYS.forEach(function (k) { out[k] = ''; });
+    // Never throws: no URLSearchParams, blocked storage or bad saved data leave ''.
+    try {
+      var qs = new URLSearchParams(location.search), saved = {};
+      try { saved = JSON.parse(sessionStorage.getItem('arise_attr') || '{}'); } catch (e) {}
+      if (!saved || typeof saved !== 'object' || Array.isArray(saved)) saved = {};
+      ATTR_KEYS.forEach(function (k) { var v = qs.get(k) || saved[k]; out[k] = typeof v === 'string' ? v : ''; });
+      try { sessionStorage.setItem('arise_attr', JSON.stringify(out)); } catch (e) {}
+    } catch (e) {}
+    return out;
+  })();
+
   function postToGHL(payload) {
     return fetch(N8N_WEBHOOK, {
       method: 'POST',
@@ -63,6 +80,8 @@
       e.preventDefault();
       var btn = form.querySelector('.btn-submit');
       var status = document.getElementById('contactStatus');
+      // UTMs travel in tags only; separate keys wait until the n8n sheet step is confirmed.
+      var utm = ['utm_source', 'utm_medium', 'utm_campaign'].map(function (k) { return attribution[k] ? k + '=' + attribution[k] : ''; }).filter(Boolean).join(' ');
       var data = {
         first_name: (form.firstName.value || '').trim(),
         last_name: (form.lastName.value || '').trim(),
@@ -70,7 +89,7 @@
         phone: (form.phone.value || '').trim(),
         service_type: form.service.value || '',
         vision_notes: (form.message.value || '').trim(),
-        tags: 'Website Contact Form',
+        tags: 'Website Contact Form' + (utm ? ', ' + utm : ''),
         source: 'contact-page',
         submitted_at: new Date().toISOString()
       };

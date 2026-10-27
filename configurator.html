@@ -1382,6 +1382,25 @@ function calculateEstimate() {
 }
 
 
+// ─── Marketing attribution: same rule and sessionStorage key as js/lead-survey.js,
+//     captured at page load so UTMs from the landing page reach the lead. ───
+const ATTR_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid'];
+const attribution = (() => {
+  const out = {};
+  ATTR_KEYS.forEach(k => { out[k] = ''; });
+  // Never throws: no URLSearchParams, blocked storage or bad saved data leave ''.
+  try {
+    const qs = new URLSearchParams(location.search);
+    let saved = {};
+    try { saved = JSON.parse(sessionStorage.getItem('arise_attr') || '{}'); } catch (e) {}
+    if (!saved || typeof saved !== 'object' || Array.isArray(saved)) saved = {};
+    ATTR_KEYS.forEach(k => { const v = qs.get(k) || saved[k]; out[k] = typeof v === 'string' ? v : ''; });
+    try { sessionStorage.setItem('arise_attr', JSON.stringify(out)); } catch (e) {}
+  } catch (e) {}
+  return out;
+})();
+
+
 // ─── Fire GHL Webhook directly (for standalone preview / Wix Velo calls the .jsw instead) ───
 function fireGHLWebhook(estimate) {
   const tags = ['Dream Center Lead'];
@@ -1392,6 +1411,9 @@ function fireGHLWebhook(estimate) {
   };
   if (serviceLabels[state.serviceType]) tags.push(serviceLabels[state.serviceType]);
   if (state.timeline === 'next-3-months') tags.push('Hot Lead \u2014 Next 3 Months');
+  // UTMs travel in tags only; separate keys wait until the n8n sheet step is confirmed.
+  const utm = ['utm_source', 'utm_medium', 'utm_campaign'].map(k => attribution[k] ? k + '=' + attribution[k] : '').filter(Boolean).join(' ');
+  if (utm) tags.push(utm);
 
   const payload = {
     first_name: state.firstName,
