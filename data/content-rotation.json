@@ -122,7 +122,7 @@
     }
   ],
   "state": {
-    "nextFocus": "city",
+    "nextFocus": "neighborhood",
     "nextCityIndex": 5,
     "neighborhoodCursor": {
       "gilbert": 1,
@@ -218,6 +218,14 @@
       "city": "Chandler",
       "neighborhood": "Ocotillo",
       "featuredProject": "family-focused"
+    },
+    {
+      "date": "2026-10-27",
+      "post": "custom-pool-builder-scottsdale-az",
+      "focus": "city",
+      "city": "Scottsdale",
+      "neighborhood": null,
+      "featuredProject": "the-desert-escape"
     }
   ]
 }
