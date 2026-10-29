@@ -122,15 +122,15 @@
     }
   ],
   "state": {
-    "nextFocus": "neighborhood",
-    "nextCityIndex": 5,
+    "nextFocus": "city",
+    "nextCityIndex": 6,
     "neighborhoodCursor": {
       "gilbert": 1,
       "san-tan-valley": 1,
       "queen-creek": 1,
       "mesa": 1,
       "chandler": 1,
-      "scottsdale": 0,
+      "scottsdale": 1,
       "paradise-valley": 0,
       "phoenix": 0,
       "tempe": 0,
@@ -226,6 +226,14 @@
       "city": "Scottsdale",
       "neighborhood": null,
       "featuredProject": "the-desert-escape"
+    },
+    {
+      "date": "2026-10-29",
+      "post": "custom-pool-builder-mccormick-ranch-scottsdale-az",
+      "focus": "neighborhood",
+      "city": "Scottsdale",
+      "neighborhood": "McCormick Ranch",
+      "featuredProject": "legacy-living"
     }
   ]
 }
