@@ -122,7 +122,7 @@
     }
   ],
   "state": {
-    "nextFocus": "city",
+    "nextFocus": "neighborhood",
     "nextCityIndex": 6,
     "neighborhoodCursor": {
       "gilbert": 1,
@@ -234,6 +234,14 @@
       "city": "Scottsdale",
       "neighborhood": "McCormick Ranch",
       "featuredProject": "legacy-living"
+    },
+    {
+      "date": "2026-10-31",
+      "post": "custom-pool-builder-paradise-valley-az",
+      "focus": "city",
+      "city": "Paradise Valley",
+      "neighborhood": null,
+      "featuredProject": "the-hidden-jewel"
     }
   ]
 }
